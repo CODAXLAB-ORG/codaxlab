@@ -45,9 +45,9 @@ const Navbar: React.FC = () => {
 
   return (
     <header className="bg-transparent text-white sticky top-0 left-0 z-[100]">
-      <div className="h-[3.5rem] md:h-[4.3rem] mx-auto px-4 lg:px-[4rem] flex justify-between items-center py-4 glass-effect md:bg-transparent md:bg-opacity-none md:backdrop-blur-none md:rounded-none">
+      <div className="h-[3.5rem] md:h-[4.3rem] mx-auto px-4 lg:px-[4rem] flex justify-between items-center py-4 bg-black bg-opacity-20 backdrop-blur-md rounded-lg md:bg-transparent md:bg-opacity-none md:backdrop-blur-none md:rounded-none">
         {/* Logo */}
-        <div className=" h-[4rem] flex items-center lg:glass-effect lg:px-3">
+        <div className=" h-[4rem] flex items-center lg:bg-black lg:bg-opacity-20 lg:backdrop-blur-md lg:rounded-lg lg:px-3">
             <img src={CODAXLABLOGO} alt="logo" className="w-[7.5rem] md:w-[10rem] rounded-lg"/>
         </div>
 
@@ -148,7 +148,7 @@ const Navbar: React.FC = () => {
         <div className="text-2xl font-bold h-[4.3rem] flex items-center pt-1">
             <img src={CODAXLABLOGO} alt="logo" className="w-[7.5rem] md:w-[10rem] rounded-lg"/>
         </div>
-          <div className="flex flex-col items-start space-y-4 gap-3 border-r-2 border-gray-700 h-full max-h-[40rem] pt-3 pb-9 pr-4 pl-2">
+          <div className="flex flex-col items-start space-y-4 gap-3 border-r-2 border-gray-700 h-full max-h-[40rem] pt-3 pb-9 pr-4">
             <Link
               to="/"
               className={
