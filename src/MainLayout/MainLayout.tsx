@@ -3,7 +3,8 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Stars } from '@react-three/drei';
 import { Vector3, Mesh } from 'three';
 import { Outlet } from 'react-router-dom';
-import Navbar from '../components/navbar/NavBar';
+import Navbar from '../components/navbar/Navbar';
+// import Navbar from '../components/navbar/NavBar';
 
 const ShootingStar = ({ position, direction, speed }: { position: Vector3; direction: Vector3; speed: number }) => {
   const starRef = useRef<Mesh>(null);
