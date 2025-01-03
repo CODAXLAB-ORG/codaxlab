@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
 
   return (
     <header className="bg-transparent text-white sticky top-0 left-0 z-[100]">
-      <div className="h-[3.5rem] md:h-[4.3rem] mx-auto px-4 lg:px-[4rem] flex justify-between items-center py-4 bg-black bg-opacity-20 backdrop-blur-md rounded-lg md:bg-transparent md:bg-opacity-none md:backdrop-blur-none md:rounded-none">
+      <div className="h-[3.5rem] md:h-[4.3rem] mx-auto px-4 lg:px-[4rem] flex justify-between items-center py-4 bg-black bg-opacity-20 backdrop-blur-md rounded-none lg:bg-transparent lg:bg-opacity-none lg:backdrop-blur-none lg:rounded-none">
         {/* Logo */}
         <div className=" h-[4rem] flex items-center lg:bg-black lg:bg-opacity-20 lg:backdrop-blur-md lg:rounded-lg lg:px-3">
             <img src={CODAXLABLOGO} alt="logo" className="w-[7.5rem] md:w-[10rem] rounded-lg"/>
@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
             to="gallery"
             className={
               activeSection === "gallery"
-                ? `${linkClasses} text-red-500 bg-gray-200 w-full px-2 py-2 shadow-custom rounded`
+                ? `${linkClasses} text-white w-full px-2 py-2 shadow-custom rounded`
                 : linkClasses
             }
             onClick={() => setIsOpen(false)}
@@ -81,7 +81,7 @@ const Navbar: React.FC = () => {
             to="donate"
             className={
               activeSection === "donate"
-                ? `${linkClasses} text-red-500 bg-gray-200 w-full px-2 py-2 shadow-custom rounded`
+                ? `${linkClasses} text-white w-full px-2 py-2 shadow-custom rounded`
                 : linkClasses
             }
             onClick={() => setIsOpen(false)}
@@ -93,7 +93,7 @@ const Navbar: React.FC = () => {
             to="about"
             className={
               activeSection === "about"
-                ? `${linkClasses} text-red-500 bg-gray-200 w-full px-2 py-2 shadow-custom rounded`
+                ? `${linkClasses} text-white w-full px-2 py-2 shadow-custom rounded`
                 : linkClasses
             }
             onClick={() => setIsOpen(false)}
@@ -105,7 +105,7 @@ const Navbar: React.FC = () => {
             to="contact"
             className={
               activeSection === "contact"
-                ? `${linkClasses} text-red-500 bg-gray-200 w-full px-2 py-2 shadow-custom rounded`
+                ? `${linkClasses} text-white w-full px-2 py-2 shadow-custom rounded`
                 : linkClasses
             }
             onClick={() => setIsOpen(false)}
@@ -142,18 +142,18 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-y-0 left-0 z-90 transform overflow-y-auto ${isOpen ? "translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out lg:hidden w-3/4 max-w-sm bg-black bg-opacity-30 backdrop-blur-md rounded-lg shadow-full`}
+        className={`fixed inset-y-0 left-0 z-90 transform overflow-y-auto ${isOpen ? "translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out lg:hidden w-3/4 max-w-sm bg-black bg-opacity-30 backdrop-blur-md shadow-full`}
       >
         <nav className="pl-4 flex flex-col justify-between h-full gap-1">
         <div className="text-2xl font-bold h-[4.3rem] flex items-center pt-1">
             <img src={CODAXLABLOGO} alt="logo" className="w-[7.5rem] md:w-[10rem] rounded-lg"/>
         </div>
-          <div className="flex flex-col items-start space-y-4 gap-3 border-r-2 border-gray-700 h-full max-h-[40rem] pt-3 pb-9 pr-4">
+          <div className="flex flex-col items-start space-y-4 gap-3 border-r-2 border-gray-700 h-full max-h-[50rem] pt-3 pb-9 pl-1">
             <Link
               to="/"
               className={
                 activeSection === "/"
-                  ? `${linkClasses} text-red-500 bg-gray-200 w-full px-2 py-2 shadow-custom rounded`
+                  ? `${linkClasses} text-white w-full px-2 py-2 shadow-custom rounded`
                   : linkClasses
               }
               onClick={() => setIsOpen(false)}
@@ -164,7 +164,7 @@ const Navbar: React.FC = () => {
               to="gallery"
               className={
                 activeSection === "gallery"
-                  ? `${linkClasses} text-red-500 bg-gray-200 w-full px-2 py-2 shadow-custom rounded`
+                  ? `${linkClasses} text-white w-full px-2 py-2 shadow-custom rounded`
                   : linkClasses
               }
               onClick={() => setIsOpen(false)}
@@ -175,7 +175,7 @@ const Navbar: React.FC = () => {
               to="donate"
               className={
                 activeSection === "donate"
-                  ? `${linkClasses} text-red-500 bg-gray-200 w-full px-2 py-2 shadow-custom rounded`
+                  ? `${linkClasses} text-white w-full px-2 py-2 shadow-custom rounded`
                   : linkClasses
               }
               onClick={() => setIsOpen(false)}
@@ -187,7 +187,7 @@ const Navbar: React.FC = () => {
               to="about"
               className={
                 activeSection === "about"
-                  ? `${linkClasses} text-red-500 bg-gray-200 w-full px-2 py-2 shadow-custom rounded`
+                  ? `${linkClasses} text-white w-full px-2 py-2 shadow-custom rounded`
                   : linkClasses
               }
               onClick={() => setIsOpen(false)}
@@ -200,7 +200,7 @@ const Navbar: React.FC = () => {
               to="contact"
               className={
                 activeSection === "contact"
-                  ? `${linkClasses} text-red-500 bg-gray-200 w-full px-2 py-2 shadow-custom rounded`
+                  ? `${linkClasses} text-white w-full px-2 py-2 shadow-custom rounded`
                   : linkClasses
               }
               onClick={() => setIsOpen(false)}

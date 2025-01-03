@@ -5,11 +5,11 @@ const HeroSection: React.FC = () => {
 
 
   return (
-    <div className="flex flex-col lg:flex-row items-center h-full justify-between pt-[8rem] lg:pt-[2.7rem] xl:pt-20 gap-3">
-      <div className="h-auto w-full lg:max-w-[50rem] flex flex-col items-center lg:items-start gap-4 py-2">
+    <div className="flex flex-col lg:flex-row items-center h-full justify-between pt-[12rem] md:pt-[8rem] lg:pt-[7rem] xl:pt-20 gap-3">
+      <div className="h-auto w-full lg:max-w-[50rem] flex flex-col items-center lg:items-start gap-2 py-2">
         <h1 className="text-5xl md:text-6xl font-extrabold tracking-wider flex flex-col text-center lg:text-start lg:min-w-[38rem]">
           <span className="text-[1.5rem] md:text-[2rem] bg-clip-text text-transparent bg-gradient-to-r from-gray-500 to-white">HERE AND NOW</span>
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-500 to-white monoton-regular pt-4">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-500 to-white monoton-regular pt-1 lg:pt-2">
             CODAX FUTURE
           </span>
         </h1>
