@@ -20,12 +20,12 @@ Ensure you have these prerequisites installed and set up on your system before p
 
 **Installation**
 
-1. **Fork the Repository**: Fork the [Supporthive](https://github.com/CODAXLAB-ORG/codaxlab) project to your own GitHub account.
+1. **Fork the Repository**: Fork the [Codaxlab](https://github.com/CODAXLAB-ORG/codaxlab) project to your own GitHub account.
 
 2. **Clone the Repository**: Clone the forked repository to your local machine by running the following command in your terminal:
 
    ```bash
-   git clone https://github.com/your-username/SupportHive
+   git clone https://github.com/your-username/Codaxlab
    ```
 
 3. **Create a New Branch**: Create a new branch to work on your desired features using the following command:
