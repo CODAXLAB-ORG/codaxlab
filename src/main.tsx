@@ -14,6 +14,10 @@ import {
   Root,
   MainLayout,
   Home,
+  About,
+  Contact,
+  Donate,
+  Gallery
   
 } from "./App";
 
@@ -28,8 +32,12 @@ const router = createBrowserRouter(
             element={
                 <Home />
             }
-          />
-        </Route>
+        />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="donate" element={<Donate/>}/>
+        <Route path="gallery" element={<Gallery/>}/>
+      </Route>
     </Route>,
   ),
 );

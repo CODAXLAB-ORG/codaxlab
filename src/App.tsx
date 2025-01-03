@@ -3,10 +3,18 @@ import Home from './pages/Home';
 import MainLayout from './MainLayout/MainLayout';
 import NotFoundPage from './MainLayout/NotFoundPage';
 import Root from './MainLayout/Root';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Donate from './pages/Donate';
+import Gallery from './pages/Gallery';
 
 export {
   Home,
   MainLayout,
   Root,
-  NotFoundPage
+  NotFoundPage,
+  About,
+  Contact,
+  Donate,
+  Gallery
 }
