@@ -4,6 +4,7 @@ import { OrbitControls, Stars } from "@react-three/drei";
 import { Vector3, Mesh } from "three";
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/navbar/Navbar";
+import Footer from "../components/footer/Footer";
 // import Navbar from '../components/navbar/NavBar';
 
 const ShootingStar = ({
@@ -21,7 +22,7 @@ const ShootingStar = ({
   useFrame(() => {
     if (starRef.current) {
       starRef.current.position.add(direction.clone().multiplyScalar(speed));
-      // Reset star position when it moves off-screen
+      // Resets star position when it moves off-screen
       if (
         starRef.current.position.x > 50 ||
         starRef.current.position.y > 50 ||
@@ -31,7 +32,7 @@ const ShootingStar = ({
           -50,
           Math.random() * 20 - 10,
           Math.random() * 20 - 10
-        ); // Reset to random y and z positions
+        ); // Resets to random y and z positions
       }
     }
   });
@@ -48,7 +49,7 @@ export default function MainLayout() {
   const [shootingStars, setShootingStars] = useState<JSX.Element[]>([]);
 
   useEffect(() => {
-    // Create shooting stars randomly and continuously
+    // Creating shooting stars randomly and continuously
     const stars = [];
     for (let i = 0; i < 10; i++) {
       const position = new Vector3(
@@ -73,7 +74,7 @@ export default function MainLayout() {
     }
     setShootingStars(stars);
 
-    // Set an interval to spawn new stars
+    // Setting an interval to spawn new stars
     const intervalId = setInterval(() => {
       const newPosition = new Vector3(
         Math.random() * 20 - 10,
@@ -95,9 +96,9 @@ export default function MainLayout() {
           speed={newSpeed}
         />,
       ]);
-    }, 1000); // Add a new shooting star every second
+    }, 200); // try Add a new shooting star every second
 
-    // Clean up the interval on component unmount
+    // Cleaning up the interval on component unmount
     return () => clearInterval(intervalId);
   }, []);
 
@@ -126,15 +127,15 @@ export default function MainLayout() {
       {/* Overlay Content */}
       <div className="absolute inset-0 flex flex-col items-center md:items-start justify-center text-center md:text-start gap-6 h-screen overflow-y-auto w-full">
         {/* Add header or navbar here */}
-        <nav className="text-white fixed top-0 w-full z-[1]">
+        <nav className="text-white fixed top-0 w-full z-[1] lg:pt-5">
           <Navbar />
         </nav>
 
-        <div className="w-full px-5 lg:px-20 pb-[5rem] pt-20">
+        <div className="w-full px-5 lg:px-20 pb-[1rem] pt-20">
           <Outlet />
         </div>
         {/* Add footer here */}
-        <footer className="">Footer</footer>
+        <Footer />
       </div>
     </main>
   );
