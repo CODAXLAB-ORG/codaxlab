@@ -61,4 +61,4 @@ Ensure you have these prerequisites installed and set up on your system before p
    git push origin "name of your branch"
    ```
 
-9. **Open a Pull Request**: Finally, open a pull request in the original [CODADXLAB repository](https://github.com/CODAXLAB-ORG/codaxlab/pulls)
+9. **Open a Pull Request**: Finally, open a pull request in the original [CODAXLAB repository](https://github.com/CODAXLAB-ORG/codaxlab/pulls)
