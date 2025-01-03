@@ -127,7 +127,7 @@ export default function MainLayout() {
       {/* Overlay Content */}
       <div className="absolute inset-0 flex flex-col items-center md:items-start justify-center text-center md:text-start gap-6 h-screen overflow-y-auto w-full">
         {/* Add header or navbar here */}
-        <nav className="text-white fixed top-0 w-full z-[1] lg:pt-5">
+        <nav className="text-white fixed top-0 w-full z-[1]">
           <Navbar />
         </nav>
 
