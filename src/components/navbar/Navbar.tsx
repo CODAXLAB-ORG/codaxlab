@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
             className="w-[7.5rem] md:w-[10rem] rounded-lg"
           />
 
-          <ul className="hidden lg:flex items-center space-x-6 h-[4rem] px-5 uppercase text-[0.8rem]">
+          <ul className="hidden lg:flex items-center space-x-6 h-[4rem] uppercase text-[0.8rem]">
             {navLinks.map((link) => (
               <li key={link.to} className="relative group">
                 <Link
@@ -84,7 +84,7 @@ const Navbar: React.FC = () => {
             <button>
               <a
                 href="mailto:enquiries@codaxlab.com "
-                className="relative inline-flex items-center justify-center p-4 px-5 py-3 overflow-hidden font-medium text-indigo-600 rounded-lg shadow-2xl group"
+                className="relative inline-flex items-center justify-center p-2 px-5 py-3 overflow-hidden font-medium text-indigo-600 rounded-lg shadow-2xl group"
               >
                 <span className="absolute top-0 left-0 w-40 h-40 -mt-10 -ml-3 transition-all duration-700 bg-white rounded-full blur-md ease"></span>
                 <span className="absolute inset-0 w-full h-full transition duration-700 group-hover:rotate-180 ease">

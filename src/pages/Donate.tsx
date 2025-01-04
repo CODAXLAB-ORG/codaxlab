@@ -2,6 +2,6 @@
 
 export default function Donate() {
   return (
-    <div>Donate</div>
+    <section className='flex flex-col pt-[0.6rem]'>Donate</section>
   )
 }

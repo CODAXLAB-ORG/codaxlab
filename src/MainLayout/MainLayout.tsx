@@ -131,7 +131,7 @@ export default function MainLayout() {
           <Navbar />
         </nav>
 
-        <div className="w-full px-5 lg:px-20 pb-[1rem]">
+        <div className="w-full px-5 lg:px-20 pb-[1rem] pt-[4rem]">
           <Outlet />
         </div>
         {/* Add footer here */}
