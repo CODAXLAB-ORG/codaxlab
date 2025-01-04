@@ -3,7 +3,7 @@ import HeroSection from '../components/HeroSection/HeroSection'
 
 export default function Home() {
   return (
-      <div className='flex flex-col h-auto'>
+      <section className='flex flex-col h-auto'>
           <div className='flex flex-col justify-between h-auto'>
               <HeroSection />
               <div className="flex flex-col md:flex-row items-center justify-end w-full h-full">
@@ -28,6 +28,6 @@ export default function Home() {
               </div>
           </div>
           <div>Hello world testing......</div>
-      </div>
+      </section>
   )
 }

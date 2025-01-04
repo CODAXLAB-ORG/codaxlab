@@ -2,6 +2,8 @@
 
 export default function Gallery() {
   return (
-    <div className="">Gallery</div>
+    <section className='flex flex-col pt-[0.6rem]'>
+      <header>Hello Gallery</header>
+    </section>
   )
 }
