@@ -57,7 +57,7 @@ const Navbar: React.FC = () => {
       {/* desktop Menu */}
 
       <nav className="py-2 bg-opacity-30 backdrop-blur-md shadow-full">
-        <div className="px-5 lg:px-20 flex justify-between items-center">
+        <div className="px-4 lg:px-20 flex justify-between items-center">
           <img
             src={CODAXLABLOGO}
             alt="logo"
@@ -129,7 +129,7 @@ const Navbar: React.FC = () => {
               className="w-[7.5rem] md:w-[10rem] rounded-lg"
             />
           </div>
-          <ul className="flex flex-col items-start justify-start h-full space-y-4 gap-3 border-r-2 border-gray-700 pt-3 pb-9 pr-4">
+          <ul className="flex flex-col items-start justify-start h-full space-y-4 gap-3 border-r-2 border-gray-700 pt-3 pb-9 pr-4 pl-1">
             {navLinks.map((link) => (
               <li key={link.to}>
                 <Link
@@ -149,8 +149,8 @@ const Navbar: React.FC = () => {
 
           <button className="flex items-center justify-start w-full h-full max-h-[5rem] border-r-2 border-gray-700 pr-4">
             <a
-              href="mailto:enquiries@codaxlab.com "
-              className="relative inline-flex items-center justify-center p-4 px-5 py-3 overflow-hidden font-medium rounded-lg shadow-2xl group"
+              href="mailto:enquiries@codaxlab.com"
+              className="relative inline-flex items-center justify-center p-4 px-5 py-3 overflow-hidden font-medium rounded-lg shadow-2xl group w-full"
             >
               <span className="absolute top-0 left-0 w-40 h-40 -mt-10 -ml-3 transition-all duration-700 bg-white rounded-full blur-md ease"></span>
               <span className="absolute inset-0 w-full h-full transition duration-700 group-hover:rotate-180 ease">
