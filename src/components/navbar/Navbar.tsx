@@ -121,7 +121,7 @@ const Navbar: React.FC = () => {
           isOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out lg:hidden w-3/4 max-w-sm bg-black bg-opacity-30 backdrop-blur-md rounded-lg shadow-full`}
       >
-        <nav className="pl-4 flex flex-col h-full gap-1">
+        <nav className="pl-4 flex flex-col justify-between h-full gap-1">
           <div className="text-2xl font-bold h-[4.3rem] flex items-center pt-1">
             <img
               src={CODAXLABLOGO}
@@ -129,7 +129,7 @@ const Navbar: React.FC = () => {
               className="w-[7.5rem] md:w-[10rem] rounded-lg"
             />
           </div>
-          <ul className="flex flex-col items-start space-y-4 gap-3 border-r-2 border-gray-700 pt-3 pb-9 pr-4">
+          <ul className="flex flex-col items-start justify-start h-full space-y-4 gap-3 border-r-2 border-gray-700 pt-3 pb-9 pr-4">
             {navLinks.map((link) => (
               <li key={link.to}>
                 <Link

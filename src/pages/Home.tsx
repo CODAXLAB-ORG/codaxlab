@@ -3,8 +3,8 @@ import HeroSection from '../components/HeroSection/HeroSection'
 
 export default function Home() {
   return (
-      <div className='flex flex-col h-auto pt-40 lg:pt-50 mt-[7rem] md:mt-[5rem] lg:mt-0'>
-          <div className='flex flex-col justify-between h-auto pt-20'>
+      <div className='flex flex-col h-auto'>
+          <div className='flex flex-col justify-between h-auto'>
               <HeroSection />
               <div className="flex flex-col md:flex-row items-center justify-end w-full h-full">
                   <div className="lg:max-w-[40rem] p-6 grid grid-cols-1 md:grid-cols-2 gap-4 w-full h-auto glass-effect border-2 border-gray-400">
