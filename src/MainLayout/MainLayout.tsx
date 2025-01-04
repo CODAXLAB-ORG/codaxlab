@@ -73,13 +73,13 @@ export default function MainLayout() {
       </Canvas>
 
       {/* Overlay Content */}
-      <div className="absolute inset-0 flex flex-col items-center md:items-start justify-center text-center md:text-start gap-6 h-screen overflow-y-auto w-full">
+      <div className="absolute inset-0 flex flex-col md:items-start justify-between text-center md:text-start gap-6 overflow-y-auto w-full no-scrollbar">
         {/* Add header or navbar here */}
         <nav className="text-white fixed top-0 w-full z-[1] lg:pt-5">
             <Navbar/>
         </nav>
 
-        <div className="w-full px-5 lg:px-20 pb-[1rem] pt-20">
+        <div className="w-full px-5 lg:px-20 pb-[1rem]">
             <Outlet />
         </div>
               {/* Add footer here */}
