@@ -31,7 +31,7 @@ export default function Footer() {
                   <Link to="about">About Us</Link>
                 </li>
                 <li>
-                  <Link to="">Join the Community</Link>
+                  <Link to="mailto:enquiries@codaxlab.com">Join the Community</Link>
                 </li>
               </ul>
             </div>
