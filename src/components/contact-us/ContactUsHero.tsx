@@ -1,5 +1,3 @@
-import ProfileRings from "./ProfileRings"
-
 
 const ContactUsHero = () => {
   return (
