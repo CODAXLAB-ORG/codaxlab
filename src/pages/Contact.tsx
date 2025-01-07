@@ -6,11 +6,11 @@ import ContactUsCallToAction from "../components/contact-us/ContactUsCallToActio
 
 export default function Contact() {
   return (
-    <section className="flex flex-col pt-[0.6rem] mt-6 w-full px-18">
+    <section className="flex flex-col pt-[0.6rem] mt-6 w-full px-18 md:px-8">
       <ContactUsHero />
 
       {/* Main Content */}
-      <div className="grid gap-8 lg:grid-cols-2">
+      <div className="grid gap-12 lg:grid-cols-2 ">
         {/* Contact Form */}
         <ContactUsForm />
 

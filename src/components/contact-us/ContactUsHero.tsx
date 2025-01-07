@@ -14,7 +14,7 @@ const ContactUsHero = () => {
           Join the Community
           </button>
         </div>
-        <div className="mt-4 p-8 flex justify-center items-center w-1/3 h-2/3 bg-green-400">
+        <div className="mt-4 p-8 flex justify-center items-center w-1/3 h-[20rem] bg-green-400 self-center">
           {/* <ProfileRings /> */}
         </div>
       </div>

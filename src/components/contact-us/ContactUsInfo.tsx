@@ -25,7 +25,7 @@ function ContactUsInfo() {
           </p>
         </div>
         <div>
-          <div className="space-y-4">
+          <div className="space-y-4 md:grid md:grid-cols-2 lg:block justify-center">
             {team.map((member, index) => (
               <div key={index} className="flex items-center gap-4">
                 <div>
