@@ -3,21 +3,21 @@ import ProfileRings from "./ProfileRings"
 
 const ContactUsHero = () => {
   return (
-    <div className="flex flex-1 flex-col md:flex-row md:justify-between mb-32 mt-16 lg:gap-[25rem]">
+    <div className="flex flex-1 flex-col md:flex-row md:justify-between mb-24 mt-16">
         <div className="flex gap-6 flex-col">
-          <h1 className="text-center sm:text-left mb-4 text-4xl md:text-6xl lg:text-7xl font-bold">
-            Get in Touch with Us
+          <h1 className="text-center md:text-left mb-4 text-5xl md:text-7xl lg:text-8xl font-bold">
+            Get in Touch <br /> with Us
           </h1>
-          <p className="text-center sm:text-left text-gray-400">
+          <p className="text-center md:text-left text-gray-400">
             Have questions? We'd love to hear from you. Send us a message and
             we'll respond as soon as possible.
           </p>
-          <button className="w-full sm:w-[15rem] bg-blue-600 hover:bg-blue-700 p-3 rounded-md">
+          <button className="w-full md:w-[15rem] bg-blue-600 hover:bg-blue-700 p-3 rounded-md">
           Join the Community
           </button>
         </div>
-        <div className="self-center flex items-center justify-center mt-4">
-          <ProfileRings />
+        <div className="mt-4 p-8 flex justify-center items-center w-1/3 h-2/3 bg-green-400">
+          {/* <ProfileRings /> */}
         </div>
       </div>
   )
