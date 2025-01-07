@@ -1,4 +1,6 @@
 import { useState } from "react";
+import ArrowUpImg from "../../assets/arrow-up.svg";
+import ArrowDownImg from "../../assets/arrow-down.svg";
 
 const faqsQ: {
     id: string;
@@ -71,7 +73,7 @@ function ContactUsFAQ() {
                       onClick={() => handleAccordianClick(faq.id)}
                       className="text-black text-left"
                     >
-                      {faq.isOpen ? <p>up</p> : <p>down</p>}
+                      {!faq.isOpen ? <p className="cursor-pointer">open</p> : <p className="cursor-pointer">close</p>}
                     </p>
                   </div>
                   {faq.isOpen && (
