@@ -1,4 +1,6 @@
 
+import SocialLinks from "./SocialLinks"
+
 const ContactUsHero = () => {
   return (
     <div className="flex gap-6 flex-col h-96 w-full justify-center items-center">
@@ -12,6 +14,7 @@ const ContactUsHero = () => {
       <button className="w-full md:w-[15rem] bg-blue-600 hover:bg-blue-700 p-3 rounded-md">
         Join the Community
       </button>
+      <SocialLinks />
     </div>
   );
 };
