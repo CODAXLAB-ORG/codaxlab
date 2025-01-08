@@ -1,6 +1,6 @@
 import { useState } from "react";
-import ArrowUpImg from "../../assets/arrow-up.svg";
-import ArrowDownImg from "../../assets/arrow-down.svg";
+import { HiOutlineArrowSmUp } from "react-icons/hi";
+import { HiArrowSmDown } from "react-icons/hi";
 
 const faqsQ: {
     id: string;
@@ -73,7 +73,7 @@ function ContactUsFAQ() {
                       onClick={() => handleAccordianClick(faq.id)}
                       className="text-black text-left"
                     >
-                      {!faq.isOpen ? <p className="cursor-pointer">open</p> : <p className="cursor-pointer">close</p>}
+                      {!faq.isOpen ? <HiArrowSmDown /> : <HiOutlineArrowSmUp />}
                     </p>
                   </div>
                   {faq.isOpen && (
