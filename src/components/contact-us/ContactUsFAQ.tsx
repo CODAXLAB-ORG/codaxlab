@@ -51,7 +51,7 @@ function ContactUsFAQ() {
     <div className="mt-12">
         <div>
           <div>
-            <h1 className="text-center mb-6 text-4xl md:text-6xl lg:text-7xl font-bold">
+            <h1 className="text-center mb-6 text-4xl md:text-5xl lg:text-6xl font-bold">
               Frequently Asked Questions
             </h1>
             <p className="text-center mb-4">
