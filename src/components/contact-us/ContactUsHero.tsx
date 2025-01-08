@@ -11,7 +11,7 @@ const ContactUsHero = () => {
         Have questions? We'd love to hear from you. Send us a message and we'll
         respond as soon as possible.
       </p>
-      <button className="w-full md:w-[15rem] bg-blue-600 hover:bg-blue-700 p-3 rounded-md">
+      <button className="w-full sm:max-w-[25rem] md:w-[15rem] bg-blue-600 hover:bg-blue-700 p-3 rounded-md">
         Join the Community
       </button>
       <SocialLinks />
