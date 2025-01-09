@@ -7,6 +7,8 @@ import CODAXLABLOGO from "../../assets/CODAXLABLOGO.png"
 import { AiFillTikTok } from "react-icons/ai";
 
 export default function Footer() {
+  const currentYear: number = new Date().getFullYear()
+  
   return (
     <footer className="w-full lg:px-[1rem]">
       <div className="w-full px-4 md:px-[1.5rem] lg:px-[4rem] py-4 flex flex-col justify-center items-center gap-3 bg-gray-500 bg-opacity-30 backdrop-blur-md rounded-t-xl shadow-lg">
@@ -59,7 +61,7 @@ export default function Footer() {
         </div>
         <div className="divider w-full h-[5px] bg-gray-400 rounded-full"></div>
         <div className="flex items-center justify-between w-full gap-4">
-          <p className="text-xs md:text-sm lg:text-lg text-gray-500 min-w-[12.7rem] text-left">&copy; 2024 CodaxLab. All Rights Reserved</p>
+          <p className="text-xs md:text-sm lg:text-lg text-gray-500 min-w-[12.7rem] text-left">&copy; {currentYear} CodaxLab. All Rights Reserved</p>
           <ul className="Socials max-w-[7rem] w-full grid grid-cols-4 gap-2 md:text-2xl">
             <li className="">
               <Link to="#"><BsWhatsapp /></Link>
