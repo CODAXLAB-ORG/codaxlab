@@ -13,14 +13,12 @@
     "@hookform/resolvers": "^3.10.0",
     "@react-three/drei": "^9.120.5",
     "@react-three/fiber": "^8.17.10",
-    "@react-three/postprocessing": "^2.16.5",
-
+    "@react-three/postprocessing": "^2.16.6",
     "antd": "^5.23.0",
-    "framer-motion": "^11.15.0",
-
     "dequal": "^2.0.3",
-
+    "framer-motion": "^11.15.0",
     "gsap": "^3.12.5",
+    "postprocessing": "^6.36.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.54.2",
@@ -29,7 +27,7 @@
     "react-paystack": "^6.0.0",
     "react-router-dom": "^7.1.1",
     "react-use-scroll-position": "^2.0.0",
-    "three": "^0.172.0",
+    "three": "^0.171.0",
     "tw-elements-react": "^1.0.0-alpha-end",
     "zod": "^3.24.1"
   },

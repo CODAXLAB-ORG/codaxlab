@@ -30,7 +30,7 @@ export default function About() {
 			</motion.div>
 
 			{/* About Us Section */}
-			<div className="container mx-auto px-6 py-16">
+			<div className="container mx-auto py-16 px-2 sm:py-24 sm:px-12 lg:px-24 xl:px-32">
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 					{/* Left Image */}
 					<div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg">
@@ -61,7 +61,7 @@ export default function About() {
 			</div>
 
 			{/* Core Values Section */}
-			<div className="container mx-auto px-6 py-16">
+			<div className="container mx-auto px-2 py-16">
 				<h2 className="text-4xl font-bold text-center text-white mb-12">
 					What Drives Us
 				</h2>
@@ -113,7 +113,7 @@ export default function About() {
 			</div>
 
 			{/* FAQs Section */}
-			<div className="container mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+			<div className="container mx-auto px-2 py-16 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 				{/* FAQ List */}
 				<div>
 					<h2 className="text-4xl font-bold text-white mb-8">
