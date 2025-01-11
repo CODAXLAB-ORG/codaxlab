@@ -2,6 +2,6 @@
 
 export default function HomeGallerySection() {
   return (
-    <div>HomeGallerySection</div>
+    <div>HomeGallerySections</div>
   )
 }
