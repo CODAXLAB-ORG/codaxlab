@@ -29,6 +29,7 @@ body {
   margin: 0;
   background: black;
   height: 100vh;
+  font-family: "Ranade", sans-serif;
 }
 #root {
   height: 100vh;
