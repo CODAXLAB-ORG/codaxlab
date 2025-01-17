@@ -13,6 +13,15 @@
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+  * {
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 640px) {
+    .curved-bottom {
+      clip-path: inset(0 0 0 10% round 0% 0% 0 30%);
+    }
+  }
 }
 
 body {
@@ -38,3 +47,9 @@ input:-webkit-autofill:active {
   -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
   -webkit-transition-delay: 9999s;
 }
+
+.canvas * {
+  pointer-events: none !important;
+}
+
+

@@ -1,10 +1,11 @@
-import { useRef, useEffect, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
-import { Vector3, Mesh } from "three";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { useEffect, useRef, useState } from "react";
 import { Outlet } from "react-router-dom";
-import Navbar from "../components/navbar/Navbar";
+import { Mesh, Vector3 } from "three";
+import Mouse from "../components/__mousepointer/mouse";
 import Footer from "../components/footer/Footer";
+import Navbar from "../components/navbar/Navbar";
 // import Navbar from '../components/navbar/NavBar';
 
 const ShootingStar = ({
@@ -124,8 +125,11 @@ export default function MainLayout() {
         <OrbitControls />
       </Canvas>
 
+      {/* moving ball as cursor follower */}
+      <Mouse/>
+
       {/* Overlay Content */}
-      <div className="absolute inset-0 flex flex-col md:items-start justify-between text-center md:text-start gap-6 overflow-y-auto w-full no-scrollbar">
+      <div id="scroll-container" className="absolute inset-0 flex flex-col md:items-start justify-between text-center md:text-start gap-6 overflow-y-auto w-full no-scrollbar">
         {/* Add header or navbar here */}
         <nav className="text-white fixed top-0 w-full z-[1]">
           <Navbar />
