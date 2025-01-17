@@ -18,7 +18,7 @@ const HeroSection: React.FC = () => {
         </p>
         <div className="max-w-[15rem] p-1 border-2 border-gray-500 rounded-lg shadow-lg transition-all duration-[5s] hover:shadow-2xl hover:border-gray-700">
           <button className="text-xl md:text-3xl w-full lg:text-2xl px-5 font-semibold py-2 md:py-3 xl:py-2 bg-gradient-to-r from-gray-500 to-white hover:from-white hover:to-gray-500 text-black rounded-lg shadow-lg transition-all duration-700 ease-in-out hover:scale-105">
-            Get Started
+            Join Our Community
           </button>
         </div>
       </div>
