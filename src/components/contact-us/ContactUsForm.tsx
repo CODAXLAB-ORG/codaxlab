@@ -11,6 +11,10 @@ const ContactUsForm = () => {
     formState: { errors },
   } = useForm<TcontactSchema>({ resolver: zodResolver(contactSchema) });
 
+  const onSubmit = (data: TcontactSchema) => {
+    console.log(data);
+    reset();
+  };
   return (
     <div className="space-y-6">
       <h1 className="text-center mb-4 lg:text-4xl text-2xl pt-5 font-semibold">
@@ -62,7 +66,10 @@ const ContactUsForm = () => {
             <span className="text-red-400 text-sm">{errors.name.message}</span>
           )}
         </div>
-        <button className="border rounded-lg bg-white hover:bg-opacity-80 transition-all duration-300 text-black py-3">
+        <button
+          onClick={handleSubmit(onSubmit)}
+          className="border rounded-lg bg-white hover:bg-opacity-80 transition-all duration-300 text-black py-3"
+        >
           Donate via bank transfer
         </button>
       </form>
