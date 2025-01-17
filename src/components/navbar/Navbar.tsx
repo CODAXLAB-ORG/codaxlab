@@ -139,7 +139,7 @@ const Navbar: React.FC = () => {
       <div
         className={`fixed inset-y-0 left-0 z-90 transform overflow-y-auto ${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 ease-in-out lg:hidden w-3/4 max-w-sm bg-black bg-opacity-30 backdrop-blur-md rounded-lg shadow-full`}
+        } transition-transform duration-300 ease-in-out lg:hidden w-3/4 max-w-sm bg-black bg-opacity-40 backdrop-blur-md rounded-lg shadow-full`}
       >
         <nav className="pl-4 flex flex-col justify-between h-full gap-1">
           <div className="text-2xl font-bold h-[4.3rem] flex items-center pt-1">
@@ -174,8 +174,8 @@ const Navbar: React.FC = () => {
             >
               <span className="absolute top-0 left-0 w-40 h-40 -mt-10 -ml-3 transition-all duration-700 bg-white rounded-full blur-md ease"></span>
               <span className="absolute inset-0 w-full h-full transition duration-700 group-hover:rotate-180 ease">
-                <span className="absolute bottom-0 left-0 w-24 h-24 -ml-10 bg-gray-400 rounded-full blur-md"></span>
-                <span className="absolute bottom-0 right-0 w-24 h-24 -mr-10 bg-gray-300 rounded-full blur-md"></span>
+                <span className="absolute bottom-0 left-0 w-24 h-24 -ml-10 bg-gray-200 rounded-full blur-md"></span>
+                <span className="absolute bottom-0 right-0 w-24 h-24 -mr-10 bg-gray-100 rounded-full blur-md"></span>
               </span>
               <span className="relative text-black font-bold">
                 Join The Community

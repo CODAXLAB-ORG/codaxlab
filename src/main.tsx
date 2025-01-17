@@ -17,7 +17,8 @@ import {
   About,
   Contact,
   Donate,
-  Gallery
+  Gallery,
+  HomeLayout
   
 } from "./App";
 
@@ -25,14 +26,16 @@ import {
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />} errorElement={<NotFoundPage />}>
-        {/* Pages with header and footer */}
-        <Route element={<MainLayout />}>
+      {/* Pages with header and footer */}
+        <Route element={<HomeLayout />}>
           <Route
             index
             element={
                 <Home />
             }
         />
+      </Route>
+      <Route element={<MainLayout />}>
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route path="donate" element={<Donate/>}/>
