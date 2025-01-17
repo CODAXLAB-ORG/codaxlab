@@ -13,10 +13,10 @@ const ContactUsForm = () => {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-center mb-4 text-4xl font-semibold">
+      <h1 className="text-center mb-4 lg:text-4xl text-2xl pt-5 font-semibold">
         We'd Love to Hear From Your!
       </h1>
-      <form className="grid gap-4 mx-auto w-[70%]">
+      <form className="grid gap-y-6 mx-auto w-[90%] text-start">
         <div className="flex flex-col gap-y-1">
           <Input
             id="name"
