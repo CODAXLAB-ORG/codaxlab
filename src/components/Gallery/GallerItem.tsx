@@ -66,9 +66,9 @@ function GallerItem(props: content) {
     hex: props.data?.color ? props.data?.color : "#000000",
     opacity: 0.1,
   });
-  const textColor = getContrastingColor(
-    shadeColor(props.data?.color ? props.data?.color : "#000000", 1)
-  );
+  const textColor = window.innerWidth>640? getContrastingColor(
+    props.data?.color?props.data?.color:"#000000"
+  ):"#ffffff";
   const textAnimation: React.CSSProperties = {
     transform:
       animateProcess?.removing && animateProcess?.process === "removing"
@@ -91,19 +91,33 @@ function GallerItem(props: content) {
         : animateProcess?.process === "removing"
         ? 0
         : 0,
+    borderColor:textColor,
+    color:textColor
   };
+  const labelAnimation:React.CSSProperties ={
+    transform:
+      animateProcess?.removing &&
+      animateProcess?.process === "removing"
+        ? `translate(-${20}px)`
+        : animateProcess?.process === "adding"
+        ? `translate(-${20}px)`
+        : `translate(0px)`,
+    opacity: animateProcess?.process === "done" ? 1 : 0,
+    color: textColor,
+    borderColor: textColor,
+  }
 
   return (
     <li
       ref={ref}
       className="w-full group h-full flex relative isolate"
       style={{
-        backgroundColor: "#37292a",
+        backgroundColor: props.data?.color?props.data?.color:"#37292a",
       }}
     >
       <div
         id="gallery_item_contents"
-        className="w-full py-16 px-4 sm:px-0 flex flex-col justify-center gap-2 h-full min-h-fit sm:h-fit"
+        className="w-full py-20 px-4 sm:px-0 flex flex-col justify-center gap-2 h-full min-h-fit sm:h-fit"
       >
         {/* write up */}
         <div
@@ -114,21 +128,10 @@ function GallerItem(props: content) {
         >
           {/* Label */}
           <span
-            style={{
-              transform:
-                animateProcess?.removing &&
-                animateProcess?.process === "removing"
-                  ? `translate(-${20}px)`
-                  : animateProcess?.process === "adding"
-                  ? `translate(-${20}px)`
-                  : `translate(0px)`,
-              opacity: animateProcess?.process === "done" ? 1 : 0,
-              color: textColor,
-              borderColor: textColor,
-            }}
+            style={labelAnimation}
             className="duration-200 shrink-0 bg-gray-100/20 size-7 min-[498px]:size-9 sm:size-12 border-2 hidden sm:flex items-center justify-center rounded-full"
           >
-            1
+            {props.controls?.position?.current}
           </span>
           {/* context */}
           <div className="w-full flex flex-col gap-2">
@@ -137,8 +140,8 @@ function GallerItem(props: content) {
               style={textAnimation}
               className="min-h-7 duration-200 delay-200 min-[498px]:min-h-9 sm:min-h-12 text-base min-[498px]:text-lg sm:text-2xl font-bold relative flex items-center gap-2"
             >
-              <span className="shrink-0 bg-gray-100/20 size-7 min-[498px]:size-9 sm:hidden border-2 flex items-center justify-center rounded-full">
-                1
+              <span style={labelAnimation} className="shrink-0 duration-200 bg-gray-100/20 size-7 min-[498px]:size-9 sm:hidden border-2 flex items-center justify-center rounded-full">
+              {props.controls?.position?.current}
               </span>
               <b>
                 {animateProcess?.removing
@@ -232,7 +235,7 @@ function GallerItem(props: content) {
       {/* illustration */}
       <div
         id="gallery_item_illustration"
-        className="absolute -z-10 sm:z-0 px-1 sm:px-0 sm:relative size-full max-w-full overflow-hidden sm:w-full"
+        className="absolute -z-10 sm:z-0 sm:relative size-full max-w-full overflow-hidden sm:w-full"
       >
         <img
           style={opacityAnimation}

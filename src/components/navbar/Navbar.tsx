@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
     <header ref={headerRef} className="text-white z-[100] duration-300">
       {/* desktop Menu */}
 
-      <nav className={`py-2 bg-opacity-30 shadow-full ${scrollPercentage>2?"border-[1px] backdrop-blur-md rounded-full":""}`}>
+      <nav className={`py-2 shadow-full bg-black/30 backdrop-blur-md ${scrollPercentage>2?"border-[1px] backdrop-blur-md rounded-full":""}`}>
         <div className="px-4 lg:px-20 flex justify-between items-center">
           <img
             src={CODAXLABLOGO}
