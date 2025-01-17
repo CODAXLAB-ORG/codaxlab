@@ -8,6 +8,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       label,
       value,
       name,
+      labelStyle,
       id,
       type,
       additionalClasses,
@@ -33,7 +34,13 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 
     return (
       <div className="flex w-full flex-col gap-y-2">
-        <label className="text-left font-medium capitalize px-2 text-black text-[14px]">
+        <label
+          className={`${
+            labelStyle
+              ? labelStyle + "text-left font-light capitalize text-[14px]"
+              : "text-left font-medium capitalize px-2 text-[14px] text-black"
+          } `}
+        >
           {label}
         </label>
         {!textarea && !options && (
