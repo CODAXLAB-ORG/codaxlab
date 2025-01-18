@@ -16,7 +16,7 @@ export default function Footer() {
           <div className=" w-full grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="flex flex-col items-start gap-1 text-start">
               <b className="text-gray-300">QUICK LINKS</b>
-              <ul className="grid grid-cols-2 w-full text-gray-400">
+              <ul className="grid grid-cols-2 w-full gap-3 text-gray-400">
                 <li>
                   <Link to="/">Home</Link>
                 </li>
