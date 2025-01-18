@@ -1,39 +1,34 @@
-// Header.tsx
 import React, { useState, useEffect, useRef } from "react";
-// import { useNavigate } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
 import CODAXLABLOGO from "../../assets/CODAXLABLOGO.png";
-
 import { Link } from "react-router-dom";
 import { CgMenuRight } from "react-icons/cg";
 import useScrollPercent from "../../hooks/useScrollPercent";
 
 const linkClasses =
-  "flex items-center text-white font-semibold hover:text-gray-300 space-x-2";
+  "flex items-center text-white font-semibold hover:text-gray-300 space-x-2 relative group";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
-  // const navigate = useNavigate();
-  const {scrollPercentage} = useScrollPercent("#scroll-container")
-  const headerRef = useRef<HTMLElement>(null)
+  const { scrollPercentage } = useScrollPercent("#scroll-container");
+  const headerRef = useRef<HTMLElement>(null);
+
   useEffect(() => {
-    const notTop = scrollPercentage>2
-    const header = headerRef.current
-    if(header){
-      const px = notTop?"1rem":"0"
-      const py = notTop?"1rem":"0"
-      header.style.padding=`${py} ${px} 0 ${px}`
-      header.style.borderRadius = notTop?"9999px":"0"
+    const notTop = scrollPercentage > 2;
+    const header = headerRef.current;
+    if (header) {
+      const px = notTop ? "1rem" : "0";
+      const py = notTop ? "1rem" : "0";
+      header.style.padding = `${py} ${px} 0 ${px}`;
+      header.style.borderRadius = notTop ? "9999px" : "0";
     }
-  }, [scrollPercentage,headerRef])
-  
+  }, [scrollPercentage]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  // Detect which section is currently active on scroll
   useEffect(() => {
     const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver(
@@ -70,7 +65,13 @@ const Navbar: React.FC = () => {
     <header ref={headerRef} className="text-white z-[100] duration-300">
       {/* desktop Menu */}
 
-      <nav className={`py-2 md:py-1 shadow-full bg-black/30 backdrop-blur-md ${scrollPercentage > 2 ?"bg-black/90 border-[1px] border-gray-400 backdrop-blur-md rounded-full":""}`}>
+      <nav
+        className={`py-2 md:py-1 shadow-full bg-black/30 backdrop-blur-md ${
+          scrollPercentage > 2
+            ? "bg-black/90 border-[2px] border-gray-200 backdrop-blur-md rounded-full"
+            : ""
+        }`}
+      >
         <div className="px-4 lg:px-20 flex justify-between items-center">
           <img
             src={CODAXLABLOGO}
@@ -85,7 +86,7 @@ const Navbar: React.FC = () => {
                   to={link.to}
                   className={
                     activeSection === link.to
-                      ? `${linkClasses} underline underline-offset-2 w-full px-2 py-2 shadow-custom rounded `
+                      ? `${linkClasses} underline underline-offset-2 w-full px-2 py-2 shadow-custom rounded`
                       : linkClasses
                   }
                   onClick={() => setIsOpen(false)}
@@ -130,11 +131,12 @@ const Navbar: React.FC = () => {
       </nav>
 
       {/* Mobile Menu */}
-      
-      {/* out click for mobile */}
-      {
-        isOpen&&<div onClick={()=>setIsOpen(false)} className="w-screen h-screen bg-black/20 fixed inset-0 left-0 -z-[90]"/>
-      }
+      {isOpen && (
+        <div
+          onClick={() => setIsOpen(false)}
+          className="w-screen h-screen bg-black/20 fixed inset-0 left-0 -z-[90]"
+        />
+      )}
 
       <div
         className={`fixed inset-y-0 left-0 z-90 transform overflow-y-auto ${
@@ -156,7 +158,7 @@ const Navbar: React.FC = () => {
                   to={link.to}
                   className={
                     activeSection === link.to
-                      ? `${linkClasses} underline underline-offset-2 w-full px-2 py-2 shadow-custom rounded `
+                      ? `${linkClasses} underline underline-offset-2 w-full px-2 py-2 shadow-custom rounded`
                       : linkClasses
                   }
                   onClick={() => setIsOpen(false)}
