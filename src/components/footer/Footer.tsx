@@ -1,12 +1,16 @@
-// import React from 'react'
+import { useState } from "react";
 import { BsWhatsapp } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa";
 import { RiTwitterXLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import CODAXLABLOGO from "../../assets/CODAXLABLOGO.png"
 import { AiFillTikTok } from "react-icons/ai";
+import BottomDrawer from "../drawers/BottomDrawer";
+
 
 export default function Footer() {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+  const [isDrawerOpen2, setIsDrawer2Open] = useState(false)
   const currentYear: number = new Date().getFullYear()
   
   return (
@@ -41,10 +45,36 @@ export default function Footer() {
               <b className="text-gray-300 uppercase">More Links</b>
               <ul className="grid grid-cols-2 w-full text-gray-400">
                 <li>
-                  <Link to="#">Privacy Policy</Link>
+                  <button onClick={() => setIsDrawerOpen(true)}>Privacy Policy</button>
+      
+                  <BottomDrawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)}>
+                    <h2 className="text-2xl font-semibold mb-4">Privacy Policy</h2>
+                    <div className="max-h-[30rem] overflow-y-auto pb-[7rem] no-scrollbar">
+                      <p className="mb-4">This is a modern bottom drawer component built with React and Tailwind CSS.</p>
+                      <p className="mb-4">It's responsive, accessible, and has smooth animations powered by Framer Motion.</p>
+                    </div>
+                  </BottomDrawer>
                 </li>
                 <li>
-                  <Link to="#">FAQs</Link>
+                  <button onClick={() => setIsDrawer2Open(true)}>FAQs</button>
+      
+                  <BottomDrawer isOpen={isDrawerOpen2} onClose={() => setIsDrawer2Open(false)}>
+                    <h2 className="text-xl font-semibold mb-4">Frequently asked questions</h2>
+                    <div className="max-h-[30rem] overflow-y-auto pb-[7rem] no-scrollbar">
+                      <p className="mb-4">This is movicx a modern bottom drawer component built with React and Tailwind CSS.</p>
+                      <p className="mb-4">It's responsive, accessible, and has smooth animations powered by Framer Motion.</p>
+                      <p className="mb-4">This is movicx a modern bottom drawer component built with React and Tailwind CSS.</p>
+                      <p className="mb-4">It's responsive, accessible, and has smooth animations powered by Framer Motion.</p>
+                      <p className="mb-4">This is movicx a modern bottom drawer component built with React and Tailwind CSS.</p>
+                      <p className="mb-4">It's responsive, accessible, and has smooth animations powered by Framer Motion.</p>
+                      <p className="mb-4">This is movicx a modern bottom drawer component built with React and Tailwind CSS.</p>
+                      <p className="mb-4">It's responsive, accessible, and has smooth animations powered by Framer Motion.</p>
+                      <p className="mb-4">This is movicx a modern bottom drawer component built with React and Tailwind CSS.</p>
+                      <p className="mb-4">It's responsive, accessible, and has smooth animations powered by Framer Motion.</p>
+                      {/* <button onClick={() => setIsDrawer2Open(false)}>Close Drawer</button> */}
+                    </div>
+                    
+                  </BottomDrawer>
                 </li>
               </ul>
             </div>

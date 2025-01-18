@@ -49,7 +49,7 @@ export default function HomeGallerySection(): JSX.Element {
   };
 
   return (
-    <div ref={sectionRef} className="no-scrollbar flex flex-col w-full items-center justify-center py-6 h-auto lg:glass-effect md:border-2 md:border-gray-400">
+    <div ref={sectionRef} className="no-scrollbar flex flex-col w-full items-center justify-center py-6 h-auto">
       <motion.h1
         className="text-[1.5rem] md:text-[2rem] bg-clip-text text-transparent bg-gradient-to-r from-gray-500 to-white font-bold uppercase"
         initial="hidden"
