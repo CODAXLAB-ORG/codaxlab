@@ -10,7 +10,7 @@ import {
   TpaymentSchema,
 } from "../../types/payment";
 import PaystackPayment from "./PaystackPayment";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 const PaymentModal = ({ show, setShow }: ModalProps) => {
   const publicKey = import.meta.env.VITE_PAYSTACK_KEY;
@@ -162,7 +162,6 @@ const PaymentModal = ({ show, setShow }: ModalProps) => {
           )}
         </div>
       )}
-      <Toaster />
     </Overlay>
   );
 };

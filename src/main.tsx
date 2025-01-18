@@ -18,35 +18,30 @@ import {
   Contact,
   Donate,
   Gallery,
-  HomeLayout
-  
+  HomeLayout,
 } from "./App";
-
+import { Toaster } from "react-hot-toast";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />} errorElement={<NotFoundPage />}>
       {/* Pages with header and footer */}
-        <Route element={<HomeLayout />}>
-          <Route
-            index
-            element={
-                <Home />
-            }
-        />
+      <Route element={<HomeLayout />}>
+        <Route index element={<Home />} />
       </Route>
       <Route element={<MainLayout />}>
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
-        <Route path="donate" element={<Donate/>}/>
-        <Route path="gallery" element={<Gallery/>}/>
+        <Route path="donate" element={<Donate />} />
+        <Route path="gallery" element={<Gallery />} />
       </Route>
-    </Route>,
-  ),
+    </Route>
+  )
 );
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>,
+    <Toaster />
+  </React.StrictMode>
 );
