@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
     <header ref={headerRef} className="text-white z-[100] duration-300">
       {/* desktop Menu */}
 
-      <nav className={`py-2 shadow-full bg-black/30 backdrop-blur-md ${scrollPercentage>2?"border-[1px] backdrop-blur-md rounded-full":""}`}>
+      <nav className={`py-2 md:py-1 shadow-full bg-black/30 backdrop-blur-md ${scrollPercentage > 2 ?"bg-black/90 border-[1px] border-gray-400 backdrop-blur-md rounded-full":""}`}>
         <div className="px-4 lg:px-20 flex justify-between items-center">
           <img
             src={CODAXLABLOGO}
@@ -133,7 +133,7 @@ const Navbar: React.FC = () => {
       
       {/* out click for mobile */}
       {
-        isOpen&&<div onClick={()=>setIsOpen(false)} className="w-screen h-screen bg-black/20 fixed inset-0 left-0 -z-[1]"/>
+        isOpen&&<div onClick={()=>setIsOpen(false)} className="w-screen h-screen bg-black/20 fixed inset-0 left-0 -z-[90]"/>
       }
 
       <div

@@ -5,6 +5,7 @@ import { Vector3, Mesh } from "three";
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
+import Mouse from "../components/__mousepointer/mouse";
 // import Navbar from '../components/navbar/NavBar';
 
 const ShootingStar = ({
@@ -122,12 +123,16 @@ export default function MainLayout() {
 
         {/* Camera Controls */}
         <OrbitControls />
-      </Canvas>
+          </Canvas>
+          
+      {/* moving ball as cursor follower */}
+      <Mouse/>
 
       {/* Overlay Content */}
-      <div className="absolute inset-0 flex flex-col md:items-start justify-between text-center md:text-start gap-6 overflow-y-auto w-full no-scrollbar">
+        <div id="scroll-container" className="absolute inset-0 flex flex-col md:items-start justify-between text-center md:text-start gap-4 overflow-y-auto w-full no-scrollbar">
+        
         {/* Add header or navbar here */}
-        <nav className="text-white fixed top-0 w-full z-[1]">
+        <nav className="text-white fixed top-0 w-full z-[90]">
           <Navbar />
         </nav>
 

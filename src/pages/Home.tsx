@@ -1,6 +1,7 @@
 // import React from 'react'
-import { SpotlightCard } from '../components/cards/SpotlightCard'
+// import { SpotlightCard } from '../components/cards/SpotlightCard'
 import HeroSection from '../components/HeroSection/HeroSection'
+import HomeAboutSection from '../components/HomeSections/HomeAboutSection'
 import HomeGallerySection from '../components/HomeSections/HomeGallerySection'
 
 export default function Home() {
@@ -13,34 +14,35 @@ export default function Home() {
                       <div>
                           <b>TECHNOLOGY</b>
                           <p className='text-xs md:text-sm text-gray-400'>
-                            Our team of developers excels in leveraging cutting-edge tools and frameworks to create robust, 
-                              scalable, and high-performance software solutions. From backend systems to interactive frontends,
-                              we ensure every product meets modern technological standards.
+                              We harness advanced tools and frameworks to develop scalable,
+                              high-performance solutions. Our focus is on creating systems that empower
+                              tech enthusiasts to connect, collaborate, and share knowledge, driving growth within the tech community.
                           </p>
                       </div>
                       <div>
                           <b>INNOVATION</b>
                           <p className='text-xs md:text-sm text-gray-400'>
-                              Our designers push creative boundaries to craft unique, user-friendly, and visually appealing interfaces.
-                              Combining functionality with aesthetic appeal, we focus on delivering designs that not only meet client
-                              expectations but also enhance user experiences.
+                              Innovation is at the heart of what we do. Our designers craft intuitive and visually appealing interfaces
+                              that inspire creativity and foster meaningful connections.
+                              By blending functionality with design excellence, we create platforms where ideas can thrive.
                           </p>
                       </div>
                   </div>
               </div>
           </div>
           {/* All other home page components here */}
-          <section className='py-5 h-auto no-scrollbar'>
+          <section className='py-5 h-auto no-scrollbar w-full'>
+              <HomeAboutSection/>
               <HomeGallerySection/>
           </section>
-          <section>
+          {/* <section>
             <SpotlightCard>
                 <h3 className="text-2xl font-bold text-gray-100 mb-4">Dynamic Spotlight</h3>
                 <p className="text-gray-300">
                 Hover over this card to see the dynamic spotlight effect.
                 </p>
             </SpotlightCard>
-          </section>
+          </section> */}
       </section>
   )
 }
