@@ -29,20 +29,20 @@ const HomeAboutSection: React.FC = () => {
 
   return (
     <section className="py-10 bg-transparent text-white w-full md:w-auto">
-      <div className="container mx-0 px-4 flex flex-col justify-center items-center">
+      <div className="container flex flex-col justify-center items-center">
         <div className="max-w-3xl mx-auto text-center mb-8">
           <h2 className="text-[1.5rem] md:text-[2rem] bg-clip-text text-transparent bg-gradient-to-r from-gray-500 to-white font-bold uppercase">About Our Community</h2>
-          <p className="text-md md:text-xl text-gray-400">
+          <p className="text-md md:text-xl text-gray-400 px-4">
             We're a team of passionate individuals dedicated to creating innovative solutions that make a difference.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mb-10 place-content-center w-full md:w-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mb-8 place-content-center w-full md:w-auto">
           {features.map((feature, index) => (
             <SpotlightCard
               key={index}
             >
-              <h3 className="text-2xl font-semibold mb-3">{feature.title}</h3>
+              <h3 className="text-lg md:text-xl font-semibold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-gray-500 to-white uppercase">{feature.title}</h3>
               <p className="text-gray-400">{feature.description}</p>
             </SpotlightCard>
           ))}

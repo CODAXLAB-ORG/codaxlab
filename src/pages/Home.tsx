@@ -14,17 +14,17 @@ export default function Home() {
                       <div>
                           <b>TECHNOLOGY</b>
                           <p className='text-xs md:text-sm text-gray-400'>
-                            Our team of developers excels in leveraging cutting-edge tools and frameworks to create robust, 
-                              scalable, and high-performance software solutions. From backend systems to interactive frontends,
-                              we ensure every product meets modern technological standards.
+                              We harness advanced tools and frameworks to develop scalable,
+                              high-performance solutions. Our focus is on creating systems that empower
+                              tech enthusiasts to connect, collaborate, and share knowledge, driving growth within the tech community.
                           </p>
                       </div>
                       <div>
                           <b>INNOVATION</b>
                           <p className='text-xs md:text-sm text-gray-400'>
-                              Our designers push creative boundaries to craft unique, user-friendly, and visually appealing interfaces.
-                              Combining functionality with aesthetic appeal, we focus on delivering designs that not only meet client
-                              expectations but also enhance user experiences.
+                              Innovation is at the heart of what we do. Our designers craft intuitive and visually appealing interfaces
+                              that inspire creativity and foster meaningful connections.
+                              By blending functionality with design excellence, we create platforms where ideas can thrive.
                           </p>
                       </div>
                   </div>
