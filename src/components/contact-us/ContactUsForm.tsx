@@ -37,6 +37,20 @@ const ContactUsForm = () => {
         We'd Love to Hear From Your!
       </h1>
       <form ref={form} className="grid gap-y-6 mx-auto xl:w-[70%] text-start">
+        <div className="flex flex-col gap-y-1">
+          <Input
+            id="subject"
+            {...register("subject")}
+            type="text"
+            labelStyle="text-white"
+            label="Subject"
+            autoComplete="off"
+            placeholder="Enter subject"
+          />
+          {errors.subject && (
+            <span className="text-red-500 text-sm">{`${errors.subject.message}`}</span>
+          )}
+        </div>
         <div className="flex flex-col gap-y-2">
           <Input
             id="name"
@@ -54,26 +68,34 @@ const ContactUsForm = () => {
 
         <div className="flex flex-col gap-y-2">
           <Input
-            id="email"
+            id="user_email"
             labelStyle="text-white"
             type="email"
-            {...register("email")}
+            {...register("user_email")}
             label="Email Address"
             autoComplete="off"
             placeholder="Enter your email address"
           />
-          {errors.email && (
-            <span className="text-red-500 text-sm">{errors.email.message}</span>
+          {errors.user_email && (
+            <span className="text-red-500 text-sm">
+              {errors.user_email.message}
+            </span>
           )}
         </div>
 
         <div className="flex flex-col gap-y-2">
+          <label
+            htmlFor="message"
+            className="text-left font-light capitalize text-[14px]"
+          >
+            Message
+          </label>
           <textarea
             id="message"
             autoComplete="off"
             placeholder="Enter your message"
             {...register("message")}
-            className="w-full outline-none focus:ring-1 ring-black rounded-md border border-gray-100 bg-transparent px-4 py-4 text-[14px] font-light"
+            className="w-full outline-none focus:ring-1  focus:ring-purple-300 outline rounded-md border border-gray-100 bg-transparent px-4 py-4 text-[14px] font-light"
           ></textarea>
           {errors.message && (
             <span className="text-red-500 text-sm">
@@ -87,7 +109,7 @@ const ContactUsForm = () => {
           type="submit"
           className="disabled:cursor-not-allowed disabled:opacity-80 border rounded-lg bg-white hover:bg-opacity-80 transition-all duration-300 text-black py-3"
         >
-          Submit
+          {isSubmitting ? "Sending..." : "Send Message"}
         </button>
       </form>
     </div>

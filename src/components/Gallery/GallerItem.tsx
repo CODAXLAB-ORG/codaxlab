@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { BsCaretLeft, BsCaretRight } from "react-icons/bs";
 import { FaLink } from "react-icons/fa";
 import { getContrastingColor, opacityShadeColor, shadeColor } from "../../lib/shadeColor";
+import { Link } from "react-router-dom";
 
 // type Props = {}
 export interface galleryItem {
@@ -166,7 +167,7 @@ function GallerItem(props: content) {
                 style={textAnimation}
                 className="duration-200 delay-[600ms]"
               >
-                Client Review:{" "}
+                Communityy Review:{" "}
               </strong>
               <q
                 style={textAnimation}
@@ -184,19 +185,19 @@ function GallerItem(props: content) {
 
             {/* reference */}
             <div className="w-full pt-3 flex items-center gap-2 flex-wrap">
-              <button
+              <Link to={props.data?.referenceLink || "#"}
                 style={opacityAnimation}
-                className="min-w-20 max-w-[70vw] bg-gray-400/20 hover:bg-gray-400/50 duration-200  min-[498px]:py-1 px-3 sm:py-2 border-2 rounded-md"
+                className="min-w-20 max-w-[70vw] bg-gray-400/20 text-center hover:bg-gray-400/50 duration-200  min-[498px]:py-1 px-3 sm:py-2 border-2 rounded-md"
               >
                 Visit
-              </button>
-              <button
+              </Link>
+              <Link to={props.data?.referenceLink || "#"}
                 style={opacityAnimation}
                 className=" duration-200 min-[498px]:p-3 p-2 border-[2px] border-transparent hover:border-gray-400 rounded-full"
                 title="copy address"
               >
                 <FaLink />
-              </button>
+              </Link>
               <span
                 style={opacityAnimation}
                 className="text-sm min-[498px]:text-lg"

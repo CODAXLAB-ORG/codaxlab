@@ -53,7 +53,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
               className={`${
                 additionalClasses
                   ? additionalClasses + "w-full text-base"
-                  : "w-full rounded-md border border-gray-200 bg-transparent px-4 py-3 text-base font-light focus:ring-1 ring-black outline-none"
+                  : "w-full rounded-md border border-gray-200 bg-transparent px-4 py-3 text-base font-light focus:ring-1  focus:ring-purple-300 outline-none"
               }`}
               type={!visible ? type : "text"}
               required={required}

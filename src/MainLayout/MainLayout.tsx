@@ -17,7 +17,7 @@ export default function MainLayout() {
       {/* Overlay Content */}
       <div id="scroll-container" className="absolute inset-0 flex flex-col md:items-start justify-between text-center md:text-start gap-6 overflow-y-auto w-full no-scrollbar">
         {/* Add header or navbar here */}
-        <nav className="text-white fixed top-0 w-full z-[1]">
+        <nav className="text-white fixed top-0 w-full z-[90]">
           <Navbar />
         </nav>
 

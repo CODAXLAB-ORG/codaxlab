@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section className="text-gray-100 font-sans">
+    <section className="text-gray-100 font-sans px-3">
       {/* Header Section */}
       <motion.div
         className="relative w-full h-96 bg-cover bg-center flex flex-col items-center justify-center text-center"
