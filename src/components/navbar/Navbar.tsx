@@ -15,19 +15,18 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
   // const navigate = useNavigate();
-  const {scrollPercentage} = useScrollPercent("#scroll-container")
-  const headerRef = useRef<HTMLElement>(null)
+  const { scrollPercentage } = useScrollPercent("#scroll-container");
+  const headerRef = useRef<HTMLElement>(null);
   useEffect(() => {
-    const notTop = scrollPercentage>2
-    const header = headerRef.current
-    if(header){
-      const px = notTop?"1rem":"0"
-      const py = notTop?"1rem":"0"
-      header.style.padding=`${py} ${px} 0 ${px}`
-      header.style.borderRadius = notTop?"9999px":"0"
+    const notTop = scrollPercentage > 2;
+    const header = headerRef.current;
+    if (header) {
+      const px = notTop ? "1rem" : "0";
+      const py = notTop ? "1rem" : "0";
+      header.style.padding = `${py} ${px} 0 ${px}`;
+      header.style.borderRadius = notTop ? "9999px" : "0";
     }
-  }, [scrollPercentage,headerRef])
-  
+  }, [scrollPercentage, headerRef]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -70,7 +69,13 @@ const Navbar: React.FC = () => {
     <header ref={headerRef} className="text-white z-[100] duration-300">
       {/* desktop Menu */}
 
-      <nav className={`py-2 shadow-full bg-black/30 backdrop-blur-md ${scrollPercentage>2?"border-[1px] backdrop-blur-md rounded-full":""}`}>
+      <nav
+        className={`py-2 shadow-full bg-black/30 backdrop-blur-md ${
+          scrollPercentage > 2
+            ? "border-[1px] backdrop-blur-md rounded-full"
+            : ""
+        }`}
+      >
         <div className="px-4 lg:px-20 flex justify-between items-center">
           <img
             src={CODAXLABLOGO}
@@ -130,11 +135,14 @@ const Navbar: React.FC = () => {
       </nav>
 
       {/* Mobile Menu */}
-      
+
       {/* out click for mobile */}
-      {
-        isOpen&&<div onClick={()=>setIsOpen(false)} className="w-screen h-screen bg-black/20 fixed inset-0 left-0 -z-[1]"/>
-      }
+      {isOpen && (
+        <div
+          onClick={() => setIsOpen(false)}
+          className="w-screen h-screen bg-black/20 fixed inset-0 left-0 -z-[1]"
+        />
+      )}
 
       <div
         className={`fixed inset-y-0 left-0 z-90 transform overflow-y-auto ${

@@ -5,6 +5,7 @@ import { Vector3, Mesh } from "three";
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
+import { Toaster } from "react-hot-toast";
 // import Navbar from '../components/navbar/NavBar';
 
 const ShootingStar = ({
@@ -126,15 +127,15 @@ export default function MainLayout() {
 
       {/* Overlay Content */}
       <div className="absolute inset-0 flex flex-col md:items-start justify-between text-center md:text-start gap-6 overflow-y-auto w-full no-scrollbar">
-        {/* Add header or navbar here */}
         <nav className="text-white fixed top-0 w-full z-[1]">
           <Navbar />
         </nav>
 
         <div className="w-full px-5 lg:px-20 pb-[1rem] pt-[4rem]">
           <Outlet />
+          {/* //TODO:: Make Toaster component show */}
+          <Toaster />
         </div>
-        {/* Add footer here */}
         <Footer />
       </div>
     </main>
