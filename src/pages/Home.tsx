@@ -1,6 +1,7 @@
 // import React from 'react'
-import { SpotlightCard } from '../components/cards/SpotlightCard'
+// import { SpotlightCard } from '../components/cards/SpotlightCard'
 import HeroSection from '../components/HeroSection/HeroSection'
+import HomeAboutSection from '../components/HomeSections/HomeAboutSection'
 import HomeGallerySection from '../components/HomeSections/HomeGallerySection'
 
 export default function Home() {
@@ -30,17 +31,18 @@ export default function Home() {
               </div>
           </div>
           {/* All other home page components here */}
-          <section className='py-5 h-auto no-scrollbar'>
+          <section className='py-5 h-auto no-scrollbar w-full'>
+              <HomeAboutSection/>
               <HomeGallerySection/>
           </section>
-          <section>
+          {/* <section>
             <SpotlightCard>
                 <h3 className="text-2xl font-bold text-gray-100 mb-4">Dynamic Spotlight</h3>
                 <p className="text-gray-300">
                 Hover over this card to see the dynamic spotlight effect.
                 </p>
             </SpotlightCard>
-          </section>
+          </section> */}
       </section>
   )
 }
