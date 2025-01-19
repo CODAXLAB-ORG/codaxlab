@@ -123,14 +123,16 @@ export default function MainLayout() {
 
         {/* Camera Controls */}
         <OrbitControls />
-          </Canvas>
-          
+      </Canvas>
+
       {/* moving ball as cursor follower */}
-      <Mouse/>
+      <Mouse />
 
       {/* Overlay Content */}
-        <div id="scroll-container" className="absolute inset-0 flex flex-col md:items-start justify-between text-center md:text-start gap-4 overflow-y-auto w-full no-scrollbar">
-        
+      <div
+        id="scroll-container"
+        className="absolute inset-0 flex flex-col md:items-start justify-between text-center md:text-start gap-4 overflow-y-auto w-full no-scrollbar"
+      >
         {/* Add header or navbar here */}
         <nav className="text-white fixed top-0 w-full z-[90]">
           <Navbar />
@@ -139,7 +141,6 @@ export default function MainLayout() {
         <div className="w-full px-5 lg:px-20 pb-[1rem] pt-[4rem]">
           <Outlet />
         </div>
-        {/* Add footer here */}
         <Footer />
       </div>
     </main>
