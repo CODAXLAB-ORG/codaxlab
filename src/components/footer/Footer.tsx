@@ -1,14 +1,17 @@
-import { useState } from "react";
+
 import { BsWhatsapp } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa";
 import { RiTwitterXLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import CODAXLABLOGO from "../../assets/CODAXLABLOGO.png";
 import { AiFillTikTok } from "react-icons/ai";
-import BottomDrawer from "../drawers/BottomDrawer";
+import { useModal } from "../../hooks/useModal";
+import { Modal } from './../modals/Modal';
+import PrivacyPolicy from "../Policy/PrivacyPolicy";
+import FAQs from "../Policy/FAQs";
 
 export default function Footer() {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const { isOpen, openModal, closeModal, isOpen2, openModal2, closeModal2 } = useModal()
   const currentYear: number = new Date().getFullYear();
 
   return (
@@ -46,7 +49,7 @@ export default function Footer() {
                     <Link to="about">About Us</Link>
                   </li>
                   <li className="hover:text-white transition-all duration-300">
-                    <a href="#">Join us!</a>
+                    <a href="mailto:enquiries@codaxlab.com">Join us!</a>
                   </li>
                 </ul>
               </div>
@@ -54,31 +57,14 @@ export default function Footer() {
                 <b className="text-white uppercase">More Links</b>
                 <ul className="flex flex-col gap-y-3 items-start py-4 justify-start w-full text-gray-300">
                   <li>
-                    <button onClick={() => setIsDrawerOpen(true)}>
+                    <button onClick={openModal}>
                       Privacy Policy
                     </button>
 
-                    <BottomDrawer
-                      isOpen={isDrawerOpen}
-                      onClose={() => setIsDrawerOpen(false)}
-                    >
-                      <h2 className="text-2xl font-semibold mb-4">
-                        Privacy Policy
-                      </h2>
-                      <div className="max-h-[30rem] overflow-y-auto pb-[7rem] no-scrollbar">
-                        <p className="mb-4">
-                          This is a modern bottom drawer component built with
-                          React and Tailwind CSS.
-                        </p>
-                        <p className="mb-4">
-                          It's responsive, accessible, and has smooth animations
-                          powered by Framer Motion.
-                        </p>
-                      </div>
-                    </BottomDrawer>
+                    
                   </li>
                   <li className="hover:text-white transition-all duration-300">
-                    <Link to="#">FAQs</Link>
+                    <button onClick={openModal2}>FAQs</button>
                   </li>
                 </ul>
               </div>
@@ -116,6 +102,24 @@ export default function Footer() {
           </ul>
         </div>
       </div>
+
+      <Modal
+        isOpen={isOpen}
+        onClose={closeModal}
+        title="Privacy Policy"
+
+      >
+        <PrivacyPolicy/>
+      </Modal>
+
+      <Modal
+        isOpen={isOpen2}
+        onClose={closeModal2}
+        title="Frequently Asked Questions"
+
+      >
+        <FAQs/>
+      </Modal>
     </footer>
   );
 }

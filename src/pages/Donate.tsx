@@ -8,7 +8,7 @@ export default function Donate() {
 
   return (
     <>
-      <section className="flex flex-col mt-[3rem]">
+      <section className="flex flex-col mt-[3rem] pt-[1rem]">
         <div className="bg-[#eeee] h-full w-full p-10 text-center space-y-5 rounded-lg">
           <h1 className="text-black text-3xl font-bold">
             Donate to Support Our Community
