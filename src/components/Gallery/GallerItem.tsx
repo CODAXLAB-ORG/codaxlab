@@ -1,8 +1,7 @@
 // import React from 'react'
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { BsCalendar2EventFill } from "react-icons/bs";
-import { FaAngleLeft, FaAngleRight, FaShareAlt } from "react-icons/fa";
+import { FaAngleLeft, FaAngleRight, FaRegImages, FaShareAlt } from "react-icons/fa";
 import { RiCalendarEventLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { opacityShadeColor, shadeColor } from "../../lib/shadeColor";
@@ -15,7 +14,6 @@ export interface galleryItem {
   description: string;
   review: string;
   referenceLink: string;
-  color: string;
   image: string;
   date: {
     label: string;
@@ -66,20 +64,23 @@ function GallerItem(props: content) {
       }
       setTimeout(() => {
         setAnimateProcess({ removing: false, process: "adding" });
+        setTimeout(() => {
+          setAnimateProcess({ removing: false, process: "done" });
+        }, totalAnimationTime);
       }, totalAnimationTime);
-      setTimeout(() => {
-        setAnimateProcess({ removing: false, process: "done" });
-      }, totalAnimationTime + 500);
+      
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props]);
 
+  const color = "#1f2937"
+
   const mainColor = opacityShadeColor({
-    hex: props.data?.color ? props.data?.color : "#000000",
+    hex: color,
     opacity: 0.1,
   });
 
-  const textColor = "#ffffff";
+
   const textAnimation: React.CSSProperties = {
     transform:
       animateProcess?.removing && animateProcess?.process === "removing"
@@ -93,11 +94,8 @@ function GallerItem(props: content) {
   const lineAnimation: React.CSSProperties = {
     width: animateProcess?.process === "done" ? "100%" : `0px`,
     opacity: animateProcess?.process === "done" ? 1 : 0,
-    backgroundColor: shadeColor(
-      props.data?.color ? props.data?.color : "#000000",
-      0.1
-    ),
     pointerEvents: animateProcess?.process === "done" ? "auto" : "none",
+    backgroundColor:shadeColor(color)
   };
   const opacityAnimation: React.CSSProperties = {
     opacity:
@@ -106,7 +104,6 @@ function GallerItem(props: content) {
         : animateProcess?.process === "removing"
         ? 0
         : 0,
-    borderColor: textColor,
     pointerEvents: animateProcess?.process === "done" ? "auto" : "none",
   };
   const labelAnimation: React.CSSProperties = {
@@ -117,7 +114,6 @@ function GallerItem(props: content) {
         ? `translate(-${20}px)`
         : `translate(0px)`,
     opacity: animateProcess?.process === "done" ? 1 : 0,
-    borderColor: textColor,
     pointerEvents: animateProcess?.process === "done" ? "auto" : "none",
   };
   const datePrev = `${contentAnimation?.previous.data?.date.ddmmyy.d} ${contentAnimation?.previous.data?.date.ddmmyy.m}, ${contentAnimation?.previous.data?.date.ddmmyy.y}`;
@@ -237,7 +233,7 @@ function GallerItem(props: content) {
                   </q>
                   <span
                     style={lineAnimation}
-                    className="duration-200 delay-[1000ms] w-full h-1  bg-white rounded-md mt-3"
+                    className="duration-200 delay-[1000ms] w-full h-1 rounded-md mt-3"
                   />
                 </span>
 
@@ -246,29 +242,21 @@ function GallerItem(props: content) {
                   <Link
                     to={props.data?.referenceLink || "#"}
                     style={opacityAnimation}
-                    className="min-w-20 max-w-[70vw] bg-gray-400/20 text-center hover:bg-gray-400/50 duration-200 delay-[1000ms] px-3 py-2 border-2 rounded-md text-sm min-[498px]:text-base sm:text-lg"
+                    className={`min-w-20  ${animateProcess?.process!=="done"?"delay-[1s]":""} flex items-center justify-center gap-3 max-w-[70vw] bg-gray-400/20 text-center hover:bg-gray-400/50 duration-200 px-3 py-2 border-2 rounded-md text-sm min-[498px]:text-base sm:text-lg`}
                   >
-                    Join event
-                  </Link>
-                  <Link
-                    to={props.data?.referenceLink || "#"}
-                    style={opacityAnimation}
-                    className=" duration-200 delay-[1000ms] min-[498px]:p-3 p-2 border-[2px] border-transparent hover:border-gray-400 rounded-full"
-                    title="add to calender"
-                  >
-                    <BsCalendar2EventFill />
+                    <FaRegImages /> <b>View Images</b>
                   </Link>
                   <button
                     onClick={shareEventLink}
                     style={opacityAnimation}
-                    className=" duration-200 delay-[1000ms] min-[498px]:p-3 p-2 border-[2px] border-transparent hover:border-gray-400 rounded-full"
+                    className={`duration-200 ${animateProcess?.process!=="done"?"delay-[1s]":""} min-[498px]:p-3 p-2 border-[2px] border-transparent hover:border-gray-400 rounded-full`}
                     title="share event"
                   >
                     <FaShareAlt />
                   </button>
                   <span
                     style={opacityAnimation}
-                    className="text-sm min-[498px]:text-lg duration-200 delay-[1000ms]"
+                    className="text-sm min-[498px]:text-lg duration-200 delay-[1s]"
                   >
                     <i className="text-gray-300 not-italic">
                       {animateProcess?.removing
@@ -287,7 +275,7 @@ function GallerItem(props: content) {
                   <button
                     onClick={props.controls?.previous}
                     style={opacityAnimation}
-                    className=" duration-200 delay-[1200ms] p-1 min-[498px]:p-2 sm:p-3 border-2 bg-gray-100/20 hover:bg-gray-600/10 border-gray-100 hover:border-gray-400 rounded-full"
+                    className={`duration-200 ${animateProcess?.process!=="done"?"delay-[1.2s]":""} p-1 min-[498px]:p-2 sm:p-3 border-2 bg-gray-100/20 hover:bg-gray-600/10 border-gray-100 hover:border-gray-400 rounded-full`}
                     title="Previous slide"
                   >
                     <FaAngleLeft />
@@ -295,7 +283,7 @@ function GallerItem(props: content) {
                   <button
                     onClick={props.controls?.next}
                     style={opacityAnimation}
-                    className=" duration-200 delay-[1200ms] p-1 min-[498px]:p-2 sm:p-3 border-2 bg-gray-100/20 hover:bg-gray-600/10 border-gray-100 hover:border-gray-400 rounded-full"
+                    className={`duration-200 ${animateProcess?.process!=="done"?"delay-[1.2s]":""} p-1 min-[498px]:p-2 sm:p-3 border-2 bg-gray-100/20 hover:bg-gray-600/10 border-gray-100 hover:border-gray-400 rounded-full`}
                     title="Next slide"
                   >
                     <FaAngleRight />
@@ -307,11 +295,9 @@ function GallerItem(props: content) {
                 id="gallery_item_illustration"
                 className="relative rounded-xl duration-1000 overflow-hidden isolate flex items-center justify-center w-full h-56 sm:size-96 sm:min-w-[300px] lg:min-w-[500px] border-2"
                 style={{
-                  borderColor: props.data?.color
-                    ? props.data?.color
-                    : "#37292a",
+                  borderColor:color,
                   backgroundColor: opacityShadeColor({
-                    hex: props.data?.color ? props.data?.color : "#37292a",
+                    hex: color,
                     opacity: 0.2,
                   }),
                 }}
@@ -336,8 +322,8 @@ function GallerItem(props: content) {
       <ul
         style={{
           backgroundColor: opacityShadeColor({
-            hex: props.data?.color ? props.data?.color : "#000000",
-            opacity: 0.1,
+            hex: color,
+            opacity: 0.5,
           }),
         }}
         className="duration-1000 w-[calc(100%-2rem)] backdrop-blur-lg sm:w-[calc(80%-2rem)] p-4 rounded-full flex items-center justify-center  gap-2 px-2 absolute  left-1/2 -translate-x-1/2 bottom-8"
@@ -356,22 +342,13 @@ function GallerItem(props: content) {
                 props.controls.toIndex(ind);
               }
             }}
-            style={{
-              backgroundColor:
-                (props.controls?.position?.current ?? 0)-1 === ind
-                  ? opacityShadeColor({
-                      hex: props.data?.color ? props.data?.color : "#000000",
-                      opacity: 1,
-                    })
-                  : "#ffffff",
-            }}
             key={ind}
             title={`${(props.controls?.position?.current ?? 0)-1 === ind?"currently in event":"go to event"} ${ind + 1} of ${props.controls?.position?.last ?? 0} `}
             className={`${
               (props.controls?.position?.current ?? 0)-1 === ind
-                ? "w-full h-2"
+                ? "w-full h-2 bg-slate-400"
                 : "size-2"
-            } max-w-4 rounded-full cursor-pointer bg-white`}
+            } max-w-4 rounded-full duration-150 cursor-pointer bg-white`}
           ></li>
         ))}
       </ul>

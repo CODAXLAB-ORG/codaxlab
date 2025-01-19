@@ -9,10 +9,9 @@ export const galleryData: galleryItem[] = [
     review:
       "Community members appreciated the depth of information and the opportunity to engage with experts, noting it as a valuable learning experience.",
     referenceLink: "#",
-    color: "#7489d5",
     image: "./gallery_image_1.jpeg",
     date: {
-      label: "starts",
+      label: "Ended",
       ddmmyy: {
         d: "19",
         m: "jan",
@@ -28,10 +27,9 @@ export const galleryData: galleryItem[] = [
     review:
       "Participants found the AMA sessions engaging and informative, valuing the direct interaction with industry leaders.",
     referenceLink: "#",
-    color: "#f0bcbc",
     image: "./gallery_image_2.jpeg",
     date: {
-      label: "starts",
+      label: "Ended",
       ddmmyy: {
         d: "19",
         m: "jan",
@@ -47,10 +45,9 @@ export const galleryData: galleryItem[] = [
     review:
       "Community feedback highlighted the challenges as both fun and intellectually stimulating, promoting skill development.",
     referenceLink: "#",
-    color: "#830ef6",
     image: "./gallery_image_3.gif",
     date: {
-      label: "starts",
+      label: "Ended",
       ddmmyy: {
         d: "19",
         m: "jan",
@@ -66,10 +63,9 @@ export const galleryData: galleryItem[] = [
     review:
       "Attendees praised the workshop for its practical approach and the facilitator's expertise, finding it highly beneficial.",
     referenceLink: "#",
-    color: "#190a2f",
     image: "./gallery_image_4.jpeg",
     date: {
-      label: "starts",
+      label: "Ended",
       ddmmyy: {
         d: "19",
         m: "jan",
@@ -85,10 +81,9 @@ export const galleryData: galleryItem[] = [
     review:
       "Participants enjoyed the collaborative environment, noting it as a great opportunity to contribute to meaningful projects.",
     referenceLink: "#",
-    color: "#0f0c9e",
     image: "./gallery_image_5.jpeg",
     date: {
-      label: "starts",
+      label: "Ended",
       ddmmyy: {
         d: "19",
         m: "jan",
@@ -104,10 +99,9 @@ export const galleryData: galleryItem[] = [
     review:
       "Members found the discussions enriching, appreciating the diverse viewpoints and in-depth analyses.",
     referenceLink: "#",
-    color: "#757474",
     image: "./gallery_image_6.jpeg",
     date: {
-      label: "starts",
+      label: "Ended",
       ddmmyy: {
         d: "19",
         m: "jan",
@@ -123,10 +117,9 @@ export const galleryData: galleryItem[] = [
     review:
       "Attendees valued the networking opportunities, finding them effective for building professional connections.",
     referenceLink: "#",
-    color: "#432f1e",
     image: "./gallery_image_7.jpeg",
     date: {
-      label: "starts",
+      label: "Ended",
       ddmmyy: {
         d: "19",
         m: "jan",
@@ -142,10 +135,9 @@ export const galleryData: galleryItem[] = [
     review:
       "The demo day was well-received, with participants appreciating the innovative solutions showcased.",
     referenceLink: "#",
-    color: "#87735b",
     image: "./gallery_image_8.jpeg",
     date: {
-      label: "starts",
+      label: "Ended",
       ddmmyy: {
         d: "19",
         m: "jan",
@@ -161,10 +153,9 @@ export const galleryData: galleryItem[] = [
     review:
       "Mentees expressed gratitude for the guidance received, noting significant progress in their careers.",
     referenceLink: "#",
-    color: "#554e44",
     image: "./gallery_image_9.jpeg",
     date: {
-      label: "starts",
+      label: "Ended",
       ddmmyy: {
         d: "19",
         m: "jan",
@@ -180,10 +171,9 @@ export const galleryData: galleryItem[] = [
     review:
       "The spotlight sessions were motivating, fostering a sense of pride and community among members.",
     referenceLink: "#",
-    color: "#9f716f",
     image: "./gallery_image_10.jpeg",
     date: {
-      label: "starts",
+      label: "Ended",
       ddmmyy: {
         d: "19",
         m: "jan",
