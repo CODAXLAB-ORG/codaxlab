@@ -24,7 +24,7 @@ export const SpotlightCard: React.FC<PropsWithChildren<SpotlightCardProps>> = ({
   return (
     <div
       ref={cardRef}
-      className="relative max-h-96 w-full min-w-[21rem] max-w-82 rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 p-8 overflow-hidden shadow-lg"
+      className="relative max-h-96 w-full min-w-[21rem] max-w-82 rounded-xl bg-gradient-to-tr from-gray-800 to-black p-8 overflow-hidden shadow-lg"
     >
       <motion.div
         className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 "

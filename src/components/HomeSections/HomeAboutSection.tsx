@@ -67,7 +67,7 @@ const HomeAboutSection: React.FC = () => {
                 <h3 className="text-lg md:text-xl font-semibold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-gray-500 to-white uppercase">
                   {feature.title}
                 </h3>
-                <p className="text-gray-400">{feature.description}</p>
+                <p className="text-gray-500">{feature.description}</p>
               </SpotlightCard>
             </motion.div>
           ))}
