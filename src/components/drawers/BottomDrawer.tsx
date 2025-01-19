@@ -13,14 +13,14 @@ const BottomDrawer: React.FC<BottomDrawerProps> = ({ isOpen, onClose, children }
       {isOpen && (
         <>
           <motion.div
-            className="fixed inset-0 bg-black/50 z-40"
+            className="fixed inset-0 bg-black/50 z-[100]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
           />
           <motion.div
-            className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 rounded-t-2xl z-50 overflow-hidden max-h-[70vh]"
+            className="fixed bottom-0 left-0 right-0 bg-gradient-to-tr from-gray-800 to-black rounded-t-2xl z-[100] overflow-hidden h-[80vh]"
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             exit={{ y: "100%" }}

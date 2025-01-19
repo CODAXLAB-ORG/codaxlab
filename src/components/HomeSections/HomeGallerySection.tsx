@@ -93,9 +93,9 @@ export default function HomeGallerySection(): JSX.Element {
                 alt="event"
                 className="w-full h-full object-cover bg-center"
               />
-              <div className="absolute top-0 left-0 bg-black bg-opacity-20 w-full h-full flex items-end justify-end z-10 p-2">
+              <div className="absolute bg-black bg-opacity-20 w-full h-full flex items-end justify-end p-2">
                 <motion.h1
-                  className="text-gray-800 min-w-[5rem] py-1 bg-white bg-opacity-70 px-4 text-right rounded-full"
+                  className="text-gray-800 min-w-[5rem] py-1 bg-white bg-opacity-70 px-4 text-right rounded-full z-[-1]"
                   variants={hoverEffect}
                 >
                   {item.label}
