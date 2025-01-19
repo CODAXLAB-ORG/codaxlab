@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { FaAngleLeft, FaAngleRight, FaRegImages, FaShareAlt } from "react-icons/fa";
 import { RiCalendarEventLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import { opacityShadeColor, shadeColor } from "../../lib/shadeColor";
+import { opacityShadeColor } from "../../lib/shadeColor";
 import { shareContent } from "../../lib/share";
 
 // type Props = {}
@@ -95,7 +95,7 @@ function GallerItem(props: content) {
     width: animateProcess?.process === "done" ? "100%" : `0px`,
     opacity: animateProcess?.process === "done" ? 1 : 0,
     pointerEvents: animateProcess?.process === "done" ? "auto" : "none",
-    backgroundColor:shadeColor(color)
+    backgroundColor:color
   };
   const opacityAnimation: React.CSSProperties = {
     opacity:
