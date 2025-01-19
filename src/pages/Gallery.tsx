@@ -3,10 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import GallerItem, { galleryItem } from "../components/Gallery/GallerItem";
 import { galleryData } from "../components/Gallery/galleryData";
+import { scrollTo } from "../lib/scrollTo";
 
 
 export default function Gallery() {
   const ref = useRef<HTMLElement>(null);
+  
   const [currentItem, setCurrentItem] = useState<{
     index: number;
     data: galleryItem;
@@ -22,6 +24,13 @@ export default function Gallery() {
     }
   }, [ref]);
 
+  useEffect(() => {
+    scrollTo("#scroll-container",0)
+  }, [currentItem])
+  
+
+  
+
   return (
     <section ref={ref} className="flex flex-col">
       <ul className="w-full h-[calc(100vh)] min-h-fit">
@@ -36,6 +45,7 @@ export default function Gallery() {
                 index: next,
                 data: galleryData[next],
               });
+              
             },
             previous() {
               const next =
@@ -45,6 +55,12 @@ export default function Gallery() {
               setCurrentItem({
                 index: next,
                 data: galleryData[next],
+              });
+            },
+            toIndex(index) {
+              setCurrentItem({
+                index: index,
+                data: galleryData[index],
               });
             },
             position:{
