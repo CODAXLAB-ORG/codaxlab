@@ -1,4 +1,4 @@
-export function shadeColor(hex: string, shadeOpacity: number): string {
+export function shadeColor(hex: string, shadeOpacity: number=1): string {
     // Ensure the hex starts with "#" and is 6 characters
     hex = hex.startsWith("#") ? hex.slice(1) : hex;
     if (hex.length === 3) {
@@ -20,6 +20,10 @@ export function shadeColor(hex: string, shadeOpacity: number): string {
   
     // Convert back to hex
     const toHex = (value: number): string => value.toString(16).padStart(2, "0");
+
+    if(shadeOpacity===1){
+      return hex;
+    }
     return `#${toHex(newR)}${toHex(newG)}${toHex(newB)}`;
   }
   
