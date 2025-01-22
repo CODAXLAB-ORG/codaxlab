@@ -50,7 +50,7 @@ const PrivacyPolicy = () => {
       <h2 className="text-xl font-semibold mb-3">Contact Us</h2>
       <p className="mb-4 text-gray-600">
         If you have any questions about this Privacy Policy, please contact us at
-        <span className="text-blue-500">enquiries@codaxlab.com</span>.
+        <a href="mailto:enquiries@codaxlab.com" className="text-blue-500"> enquiries@codaxlab.com</a>.
       </p>
 
       <p className="text-xs text-gray-600">
