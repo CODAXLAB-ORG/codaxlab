@@ -32,4 +32,19 @@ export const faqData: FAQ[] = [
       answer:
         "If you have any questions, feel free to contact us at enquiries@codaxlab.com.",
     },
+    {
+      question: "Is CODAXLAB free to join?",
+      answer:
+        "Yes, joining CODAXLAB is completely free. However, some advanced features or events may require a subscription or one-time payment.",
+    },
+    {
+      question: "Who can join CODAXLAB?",
+      answer:
+        "Anyone with an interest in technology, whether a beginner, a hobbyist, or a seasoned expert, is welcome to join CODAXLAB.",
+    },
+    {
+      question: "Are there community guidelines for CODAXLAB?",
+      answer:
+        "Yes, all members are expected to adhere to our community guidelines to ensure a respectful and collaborative environment. Violations may result in account suspension or termination.",
+    },
   ];

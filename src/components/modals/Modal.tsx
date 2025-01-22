@@ -27,7 +27,7 @@ export const Modal: React.FC<ModalProps> = ({
       aria-modal="true"
     >
       <section
-        className={`relative bg-gray-200 text-black rounded-lg shadow-lg w-full max-w-lg p-6 border border-gradient-to-tr from-gray-800 to-black animate-fade-in`}
+        className={`relative bg-gray-200 text-black rounded-lg shadow-lg w-full max-w-lg p-6 border-2 border-black animate-fade-in`}
       >
         {/* Header */}
         <header className="flex items-center justify-between mb-2">

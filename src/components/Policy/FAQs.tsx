@@ -29,7 +29,7 @@ const FAQs: React.FC = () => {
               <Plus size={24} className="min-w-7 text-lg"/>
             </button>
             {activeIndex === index && (
-              <div className="p-4 bg-black text-gray-400">
+              <div className="p-4 bg-black text-gray-500">
                 <p>{faq.answer}</p>
               </div>
             )}
