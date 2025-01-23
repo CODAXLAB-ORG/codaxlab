@@ -1,9 +1,15 @@
 // import React from 'react'
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { FaAngleLeft, FaAngleRight, FaRegImages, FaShareAlt } from "react-icons/fa";
+import {
+  FaAngleLeft,
+  FaAngleRight,
+  FaRegImages,
+  FaShareAlt,
+} from "react-icons/fa";
 import { RiCalendarEventLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { useIsMobile } from "../../hooks/use-mobile";
 import { opacityShadeColor } from "../../lib/shadeColor";
 import { shareContent } from "../../lib/share";
 
@@ -38,6 +44,8 @@ interface content {
 }
 
 function GallerItem(props: content) {
+  // screen size is mobile
+  const isMobile = useIsMobile();
   // check if item is shown
   const ref = useRef<HTMLLIElement>(null);
   const [contentAnimation, setContentAnimation] = useState<
@@ -68,18 +76,16 @@ function GallerItem(props: content) {
           setAnimateProcess({ removing: false, process: "done" });
         }, totalAnimationTime);
       }, totalAnimationTime);
-      
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props]);
 
-  const color = "#1f2937"
+  const color = "#1f2937";
 
   const mainColor = opacityShadeColor({
     hex: color,
     opacity: 0.1,
   });
-
 
   const textAnimation: React.CSSProperties = {
     transform:
@@ -95,7 +101,7 @@ function GallerItem(props: content) {
     width: animateProcess?.process === "done" ? "100%" : `0px`,
     opacity: animateProcess?.process === "done" ? 1 : 0,
     pointerEvents: animateProcess?.process === "done" ? "auto" : "none",
-    backgroundColor:color
+    backgroundColor: color,
   };
   const opacityAnimation: React.CSSProperties = {
     opacity:
@@ -123,6 +129,10 @@ function GallerItem(props: content) {
     const title = animateProcess?.removing
       ? contentAnimation?.previous.data?.title
       : contentAnimation?.current.data?.title;
+    const dateLabel = animateProcess?.removing
+    ? contentAnimation?.previous.data?.date.label
+    : contentAnimation?.current.data?.date.label;
+    const date = dateCurr
 
     const text = animateProcess?.removing
       ? contentAnimation?.previous.data?.description
@@ -131,22 +141,23 @@ function GallerItem(props: content) {
     const url = animateProcess?.removing
       ? contentAnimation?.previous.data?.referenceLink
       : contentAnimation?.current.data?.referenceLink;
+
+    const data = `CodaxLab event\n${dateLabel}: ${date}\n\n${text}\n\n\n`
     shareContent({
       title,
-      text,
+      text:data,
       url,
     });
-  }, [animateProcess?.removing, contentAnimation]);
+  }, [animateProcess?.removing, contentAnimation, dateCurr]);
 
   return (
     <li
       ref={ref}
-      className="w-full group h-full flex gap-4 sm:gap-16 md:gap-20 flex-col-reverse sm:flex-row items-center justify-center relative isolate px-4"
+      className="w-full group h-full flex gap-4 md:gap-5 flex-col-reverse sm:flex-row items-center justify-center relative isolate px-4 md:px-0"
     >
-      {/* sm:min-w-[400px] sm:max-w-[450px] md:max-w-full md:min-w-[700px] */}
       <div
         id="gallery_item_contents"
-        className="w-full py-20 sm:px-4 flex flex-col justify-center gap-2 h-full min-h-fit sm:h-fit"
+        className="w-full py-20 sm:px-4 flex flex-col justify-center gap-2 h-full min-h-fit sm:h-fit md:min-w-[468px]"
       >
         {/* write up */}
         <div
@@ -183,7 +194,7 @@ function GallerItem(props: content) {
               </b>
             </h4>
 
-            <div className="w-full flex flex-col-reverse sm:flex-row items-center md:items-start justify-between gap-4">
+            <div className="w-full flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-4">
               {/* context writeup */}
               <div className="w-full">
                 {/* description */}
@@ -242,14 +253,18 @@ function GallerItem(props: content) {
                   <Link
                     to={props.data?.referenceLink || "#"}
                     style={opacityAnimation}
-                    className={`min-w-20  ${animateProcess?.process!=="done"?"delay-[1s]":""} flex items-center justify-center gap-3 max-w-[70vw] bg-gray-400/20 text-center hover:bg-gray-400/50 duration-200 px-3 py-2 border-2 rounded-md text-sm min-[498px]:text-base sm:text-lg`}
+                    className={`min-w-20  ${
+                      animateProcess?.process !== "done" ? "delay-[1s]" : ""
+                    } flex items-center justify-center gap-3 max-w-[70vw] bg-gray-400/20 text-center hover:bg-gray-400/50 duration-200 px-3 py-2 border-2 rounded-md text-sm min-[498px]:text-base sm:text-lg`}
                   >
                     <FaRegImages /> <b>View Images</b>
                   </Link>
                   <button
                     onClick={shareEventLink}
                     style={opacityAnimation}
-                    className={`duration-200 ${animateProcess?.process!=="done"?"delay-[1s]":""} min-[498px]:p-3 p-2 border-[2px] border-transparent hover:border-gray-400 rounded-full`}
+                    className={`duration-200 ${
+                      animateProcess?.process !== "done" ? "delay-[1s]" : ""
+                    } min-[498px]:p-3 p-2 border-[2px] border-transparent hover:border-gray-400 rounded-full`}
                     title="share event"
                   >
                     <FaShareAlt />
@@ -275,7 +290,9 @@ function GallerItem(props: content) {
                   <button
                     onClick={props.controls?.previous}
                     style={opacityAnimation}
-                    className={`duration-200 ${animateProcess?.process!=="done"?"delay-[1.2s]":""} p-1 min-[498px]:p-2 sm:p-3 border-2 bg-gray-100/20 hover:bg-gray-600/10 border-gray-100 hover:border-gray-400 rounded-full`}
+                    className={`duration-200 ${
+                      animateProcess?.process !== "done" ? "delay-[1.2s]" : ""
+                    } p-1 min-[498px]:p-2 sm:p-3 border-2 bg-gray-100/20 hover:bg-gray-600/10 border-gray-100 hover:border-gray-400 rounded-full`}
                     title="Previous slide"
                   >
                     <FaAngleLeft />
@@ -283,40 +300,69 @@ function GallerItem(props: content) {
                   <button
                     onClick={props.controls?.next}
                     style={opacityAnimation}
-                    className={`duration-200 ${animateProcess?.process!=="done"?"delay-[1.2s]":""} p-1 min-[498px]:p-2 sm:p-3 border-2 bg-gray-100/20 hover:bg-gray-600/10 border-gray-100 hover:border-gray-400 rounded-full`}
+                    className={`duration-200 ${
+                      animateProcess?.process !== "done" ? "delay-[1.2s]" : ""
+                    } p-1 min-[498px]:p-2 sm:p-3 border-2 bg-gray-100/20 hover:bg-gray-600/10 border-gray-100 hover:border-gray-400 rounded-full`}
                     title="Next slide"
                   >
                     <FaAngleRight />
                   </button>
                 </div>
               </div>
-              {/* illustration */}
-              <div
-                id="gallery_item_illustration"
-                className="relative rounded-xl duration-1000 overflow-hidden isolate flex items-center justify-center w-full h-56 sm:size-96 sm:min-w-[300px] lg:min-w-[500px] border-2"
-                style={{
-                  borderColor:color,
-                  backgroundColor: opacityShadeColor({
-                    hex: color,
-                    opacity: 0.2,
-                  }),
-                }}
-              >
-                <img
-                  style={opacityAnimation}
-                  className="size-full duration-1000 object-cover object-center"
-                  src={
-                    animateProcess?.removing
-                      ? contentAnimation?.previous.data?.image
-                      : contentAnimation?.current.data?.image
-                  }
-                  alt="galler_image_1"
-                />
-              </div>
+              {/* illustration for mobile */}
+              {isMobile && (
+                <div
+                  id="gallery_item_illustration"
+                  className="relative rounded-xl duration-1000 overflow-hidden isolate flex items-center justify-center w-full h-56 border-2"
+                  style={{
+                    borderColor: color,
+                    backgroundColor: opacityShadeColor({
+                      hex: color,
+                      opacity: 0.2,
+                    }),
+                  }}
+                >
+                  <img
+                    style={opacityAnimation}
+                    className="size-full duration-1000 object-cover object-center"
+                    src={
+                      animateProcess?.removing
+                        ? contentAnimation?.previous.data?.image
+                        : contentAnimation?.current.data?.image
+                    }
+                    alt="galler_image_1"
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
       </div>
+
+      {/* illustration for larger screen */}
+      {!isMobile && (
+        <div
+          id="gallery_item_illustration"
+          className="curved-bottom pl-1 pb-1 shadow-lg shadow-white relative duration-1000 overflow-hidden isolate flex items-center justify-center w-full h-screen min-h-full md:min-w-[300px] lg:min-w-[500px]"
+          style={{
+            backgroundColor: opacityShadeColor({
+              hex: color,
+              opacity: 0.2,
+            }),
+          }}
+        >
+          <img
+            style={opacityAnimation}
+            className="size-full duration-1000 object-cover object-center curved-bottom"
+            src={
+              animateProcess?.removing
+                ? contentAnimation?.previous.data?.image
+                : contentAnimation?.current.data?.image
+            }
+            alt="galler_image_1"
+          />
+        </div>
+      )}
 
       {/* positioning and indexing of item change */}
       <ul
@@ -336,16 +382,20 @@ function GallerItem(props: content) {
           <li
             onClick={() => {
               if (
-                ind !== (props.controls?.position?.current ?? 0)-1 &&
+                ind !== (props.controls?.position?.current ?? 0) - 1 &&
                 props.controls?.toIndex
               ) {
                 props.controls.toIndex(ind);
               }
             }}
             key={ind}
-            title={`${(props.controls?.position?.current ?? 0)-1 === ind?"currently in event":"go to event"} ${ind + 1} of ${props.controls?.position?.last ?? 0} `}
+            title={`${
+              (props.controls?.position?.current ?? 0) - 1 === ind
+                ? "currently in event"
+                : "go to event"
+            } ${ind + 1} of ${props.controls?.position?.last ?? 0} `}
             className={`${
-              (props.controls?.position?.current ?? 0)-1 === ind
+              (props.controls?.position?.current ?? 0) - 1 === ind
                 ? "w-full h-2 bg-slate-400"
                 : "size-2"
             } max-w-4 rounded-full duration-150 cursor-pointer bg-white`}
