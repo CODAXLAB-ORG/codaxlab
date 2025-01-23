@@ -3,6 +3,8 @@ import { motion } from 'framer-motion'
 import HeroSection from '../components/HeroSection/HeroSection'
 import HomeAboutSection from '../components/HomeSections/HomeAboutSection'
 import HomeGallerySection from '../components/HomeSections/HomeGallerySection'
+import { Link } from 'react-router-dom'
+import { CiLocationArrow1 } from 'react-icons/ci'
 
 export default function Home() {
   // Animation variants
@@ -74,6 +76,34 @@ export default function Home() {
       >
         <HomeAboutSection />
         <HomeGallerySection />
+        <section className="w-full h-auto flex justify-center pt-2 md:pt-7">
+          <div className='text-center w-full max-w-6xl flex flex-col gap-4 items-center'>
+            <h2 className="text-[1.5rem] md:text-[2rem] bg-clip-text text-transparent bg-gradient-to-r from-gray-500 to-white font-bold uppercase">
+              Our Community
+            </h2>
+            <p className="text-md md:text-xl text-gray-400 px-1">
+              From developers building solutions to users worldwide, each individual contributes significantly to our mission. Together, we've helped each other through innovative technology, bridging gaps with tools, knowledge, and opportunities.
+            </p>
+
+            <p className="text-md md:text-xl text-gray-400 px-1">
+              But our work is far from over. With your support, we can reach even more people and create lasting change in communities around the world.
+            </p>
+
+            <p className="text-md md:text-xl text-gray-400 px-1">
+              Our community also organizes hackathons to motivate techies. We are a space for tech enthusiasts to connect, share knowledge, and grow together.
+            </p>
+
+            <Link
+              to="donate"
+              className="flex items-center justify-between gap-4 mt-3 px-3 py-2 bg-gradient-to-r from-gray-500 to-white hover:from-white hover:to-gray-500 text-black rounded-full shadow-lg"
+            >
+              <span className="pl-3 px-2 text-xl">Donate today</span>
+              <div className="px-2 py-2 bg-black text-white rounded-full text-xl flex items-center justify-center">
+                <CiLocationArrow1 />
+              </div>
+            </Link>
+          </div>
+        </section>
       </motion.section>
     </motion.section>
   )

@@ -44,12 +44,12 @@ export default function HomeGallerySection(): JSX.Element {
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeInOut" } },
   };
 
-  const hoverEffect = {
-    hover: { scale: 1.05, boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.3)" },
-  };
+  // const hoverEffect = {
+  //   hover: { scale: 1.05, boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.3)" },
+  // };
 
   return (
-    <div ref={sectionRef} className="no-scrollbar flex flex-col w-full items-center justify-center py-6 h-auto">
+    <div ref={sectionRef} className="no-scrollbar flex flex-col w-full items-center justify-center pt-6 pb-2 h-auto">
       <motion.h1
         className="text-[1.5rem] md:text-[2rem] bg-clip-text text-transparent bg-gradient-to-r from-gray-500 to-white font-bold uppercase"
         initial="hidden"
@@ -84,8 +84,8 @@ export default function HomeGallerySection(): JSX.Element {
               initial="hidden"
               animate={controls}
               variants={{
-                hidden: { opacity: 0, scale: 0.9 },
-                visible: { opacity: 1, scale: 1, transition: { delay: index * 0.1, duration: 0.6 } },
+                  hidden: { scale: 0.9 },
+                  visible: { scale: 1, transition: { delay: index * 0.1, duration: 0.6 } },
               }}
             >
               <img
@@ -93,14 +93,14 @@ export default function HomeGallerySection(): JSX.Element {
                 alt="event"
                 className="w-full h-full object-cover bg-center"
               />
-              <div className="absolute top-0 left-0 bg-black bg-opacity-20 w-full h-full flex items-end justify-end z-10 p-2">
+              {/* <div className="absolute top-0 left-0 bg-black bg-opacity-20 w-full h-full flex items-end justify-end p-2">
                 <motion.h1
                   className="text-gray-800 min-w-[5rem] py-1 bg-white bg-opacity-70 px-4 text-right rounded-full"
                   variants={hoverEffect}
                 >
                   {item.label}
                 </motion.h1>
-              </div>
+              </div> */}
             </motion.div>
           ))}
         </div>
@@ -116,8 +116,8 @@ export default function HomeGallerySection(): JSX.Element {
                 initial="hidden"
                 animate={controls}
                 variants={{
-                  hidden: { opacity: 0, scale: 0.9 },
-                  visible: { opacity: 1, scale: 1, transition: { delay: index * 0.1, duration: 0.6 } },
+                  hidden: { scale: 0.9 },
+                  visible: { scale: 1, transition: { delay: index * 0.1, duration: 0.6 } },
                 }}
               >
                 <img
@@ -125,14 +125,14 @@ export default function HomeGallerySection(): JSX.Element {
                   alt="event"
                   className="w-full h-full object-cover bg-center"
                 />
-                <div className="absolute top-0 left-0 bg-black bg-opacity-20 w-full h-full flex items-end justify-end z-10 p-2">
+                {/* <div className="absolute top-0 left-0 bg-black bg-opacity-20 w-full h-full flex items-end justify-end z-10 p-2">
                   <motion.h1
                     className="text-gray-800 min-w-[5rem] py-1 bg-white bg-opacity-70 px-4 text-right rounded-full"
                     variants={hoverEffect}
                   >
                     {item.label}
                   </motion.h1>
-                </div>
+                </div> */}
               </motion.div>
             ))}
           </div>
