@@ -74,7 +74,7 @@ function GallerItem(props: content) {
         setAnimateProcess({ removing: false, process: "adding" });
         setTimeout(() => {
           setAnimateProcess({ removing: false, process: "done" });
-        }, totalAnimationTime);
+        }, totalAnimationTime+200);
       }, totalAnimationTime);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
