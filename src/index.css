@@ -17,10 +17,12 @@
     box-sizing: border-box;
   }
 
-  @media (min-width: 640px) {
-    .curved-bottom {
-      clip-path: inset(0 0 0 10% round 0% 0% 0 30%);
-    }
+  .curved-bottom {
+    clip-path: inset(0 0 0 10% round 0% 0% 0% 30%);
+  }
+  
+  .before\:curved-bottom::before {
+    clip-path: inset(0 0 0 10% round 0% 0% 0% 30%);
   }
 }
 
@@ -33,6 +35,9 @@ body {
 }
 #root {
   height: 100vh;
+}
+button:focus{
+  outline: none;
 }
 
 .monoton-regular {
