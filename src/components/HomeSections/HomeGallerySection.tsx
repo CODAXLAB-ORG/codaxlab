@@ -41,7 +41,11 @@ export default function HomeGallerySection(): JSX.Element {
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeInOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeInOut" },
+    },
   };
 
   // const hoverEffect = {
@@ -49,9 +53,12 @@ export default function HomeGallerySection(): JSX.Element {
   // };
 
   return (
-    <div ref={sectionRef} className="no-scrollbar flex flex-col w-full items-center justify-center pt-6 pb-2 h-auto">
+    <div
+      ref={sectionRef}
+      className="no-scrollbar flex flex-col w-full items-center justify-center pt-6 pb-2 h-auto gap-y-2"
+    >
       <motion.h1
-        className="text-[1.5rem] md:text-[2rem] bg-clip-text text-transparent bg-gradient-to-r from-gray-500 to-white font-bold uppercase"
+        className="text-[1.5rem] md:text-[2rem] bg-clip-text text-transparent bg-gradient-to-r from-gray-400 to-white font-bold uppercase"
         initial="hidden"
         animate={controls}
         variants={fadeInUp}
@@ -59,7 +66,7 @@ export default function HomeGallerySection(): JSX.Element {
         Our Recent Events
       </motion.h1>
       <motion.p
-        className="text-md md:text-xl lg:text-lg max-w-2xl bg-clip-text text-gray-400 text-center pb-2"
+        className="text-md md:text-xl lg:text-lg max-w-2xl bg-clip-text text-gray-300 text-center pb-2"
         initial="hidden"
         animate={controls}
         variants={fadeInUp}
@@ -84,8 +91,11 @@ export default function HomeGallerySection(): JSX.Element {
               initial="hidden"
               animate={controls}
               variants={{
-                  hidden: { scale: 0.9 },
-                  visible: { scale: 1, transition: { delay: index * 0.1, duration: 0.6 } },
+                hidden: { scale: 0.9 },
+                visible: {
+                  scale: 1,
+                  transition: { delay: index * 0.1, duration: 0.6 },
+                },
               }}
             >
               <img
@@ -117,7 +127,10 @@ export default function HomeGallerySection(): JSX.Element {
                 animate={controls}
                 variants={{
                   hidden: { scale: 0.9 },
-                  visible: { scale: 1, transition: { delay: index * 0.1, duration: 0.6 } },
+                  visible: {
+                    scale: 1,
+                    transition: { delay: index * 0.1, duration: 0.6 },
+                  },
                 }}
               >
                 <img
@@ -140,7 +153,12 @@ export default function HomeGallerySection(): JSX.Element {
       </motion.div>
 
       {/* See More Button */}
-      <motion.div className="py-5" variants={fadeInUp} initial="hidden" animate={controls}>
+      <motion.div
+        className="py-5"
+        variants={fadeInUp}
+        initial="hidden"
+        animate={controls}
+      >
         <Link
           to="gallery"
           className="flex items-center justify-between gap-4 px-3 py-2 bg-gradient-to-r from-gray-500 to-white hover:from-white hover:to-gray-500 text-black rounded-full shadow-lg"
