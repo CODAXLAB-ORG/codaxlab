@@ -1,10 +1,10 @@
 // import React from 'react'
-import { motion } from 'framer-motion'
-import HeroSection from '../components/HeroSection/HeroSection'
-import HomeAboutSection from '../components/HomeSections/HomeAboutSection'
-import HomeGallerySection from '../components/HomeSections/HomeGallerySection'
-import { Link } from 'react-router-dom'
-import { CiLocationArrow1 } from 'react-icons/ci'
+import { motion } from "framer-motion";
+import HeroSection from "../components/HeroSection/HeroSection";
+import HomeAboutSection from "../components/HomeSections/HomeAboutSection";
+import HomeGallerySection from "../components/HomeSections/HomeGallerySection";
+import { Link } from "react-router-dom";
+import { CiLocationArrow1 } from "react-icons/ci";
 
 export default function Home() {
   // Animation variants
@@ -17,30 +17,30 @@ export default function Home() {
         delayChildren: 0.2,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  }
+  };
 
   return (
-    <motion.section 
-      className='flex flex-col h-auto' 
-      initial="hidden" 
-      animate="visible" 
+    <motion.section
+      className="flex flex-col h-auto "
+      initial="hidden"
+      animate="visible"
       variants={containerVariants}
     >
-      <motion.div 
-        className='flex flex-col justify-between h-auto' 
+      <motion.div
+        className="flex flex-col justify-between h-auto"
         variants={itemVariants}
       >
         <HeroSection />
         <motion.div
           className="flex flex-col md:flex-row items-center justify-end w-full h-full"
-          initial={{ x: '-100vw' }}
+          initial={{ x: "-100vw" }}
           animate={{ x: 0 }}
-          transition={{ type: 'spring', stiffness: 50, damping: 10 }}
+          transition={{ type: "spring", stiffness: 50, damping: 10 }}
         >
           <motion.div
             className="lg:max-w-[40rem] p-6 grid grid-cols-1 md:grid-cols-2 gap-4 w-full h-auto glass-effect border-2 border-gray-400"
@@ -50,18 +50,21 @@ export default function Home() {
           >
             <motion.div variants={itemVariants}>
               <b>TECHNOLOGY</b>
-              <p className='text-xs md:text-sm text-gray-400'>
+              <p className="text-xs md:text-sm text-gray-400">
                 We harness advanced tools and frameworks to develop scalable,
-                high-performance solutions. Our focus is on creating systems that empower
-                tech enthusiasts to connect, collaborate, and share knowledge, driving growth within the tech community.
+                high-performance solutions. Our focus is on creating systems
+                that empower tech enthusiasts to connect, collaborate, and share
+                knowledge, driving growth within the tech community.
               </p>
             </motion.div>
             <motion.div variants={itemVariants}>
               <b>INNOVATION</b>
-              <p className='text-xs md:text-sm text-gray-400'>
-                Innovation is at the heart of what we do. Our designers craft intuitive and visually appealing interfaces
-                that inspire creativity and foster meaningful connections.
-                By blending functionality with design excellence, we create platforms where ideas can thrive.
+              <p className="text-xs md:text-sm text-gray-400">
+                Innovation is at the heart of what we do. Our designers craft
+                intuitive and visually appealing interfaces that inspire
+                creativity and foster meaningful connections. By blending
+                functionality with design excellence, we create platforms where
+                ideas can thrive.
               </p>
             </motion.div>
           </motion.div>
@@ -69,7 +72,7 @@ export default function Home() {
       </motion.div>
       {/* All other home page components here */}
       <motion.section
-        className='py-5 h-auto no-scrollbar w-full'
+        className="py-20 flex flex-col gap-y-20 h-auto no-scrollbar w-full"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
@@ -77,20 +80,27 @@ export default function Home() {
         <HomeAboutSection />
         <HomeGallerySection />
         <section className="w-full h-auto flex justify-center pt-2 md:pt-7">
-          <div className='text-center w-full max-w-6xl flex flex-col gap-4 items-center'>
-            <h2 className="text-[1.5rem] md:text-[2rem] bg-clip-text text-transparent bg-gradient-to-r from-gray-500 to-white font-bold uppercase">
+          <div className="text-center w-full max-w-6xl flex flex-col gap-4 items-center">
+            <h2 className="text-[1.5rem] md:text-[2rem] bg-clip-text text-transparent bg-gradient-to-r from-gray-400 to-white font-bold uppercase">
               Our Community
             </h2>
-            <p className="text-md md:text-xl text-gray-400 px-1">
-              From developers building solutions to users worldwide, each individual contributes significantly to our mission. Together, we've helped each other through innovative technology, bridging gaps with tools, knowledge, and opportunities.
+            <p className="text-md md:text-xl text-gray-200 px-1">
+              From developers building solutions to users worldwide, each
+              individual contributes significantly to our mission. Together,
+              we've helped each other through innovative technology, bridging
+              gaps with tools, knowledge, and opportunities.
             </p>
 
-            <p className="text-md md:text-xl text-gray-400 px-1">
-              But our work is far from over. With your support, we can reach even more people and create lasting change in communities around the world.
+            <p className="text-md md:text-xl text-gray-200 px-1">
+              But our work is far from over. With your support, we can reach
+              even more people and create lasting change in communities around
+              the world.
             </p>
 
-            <p className="text-md md:text-xl text-gray-400 px-1">
-              Our community also organizes hackathons to motivate techies. We are a space for tech enthusiasts to connect, share knowledge, and grow together.
+            <p className="text-md md:text-xl text-gray-200 px-1">
+              Our community also organizes hackathons to motivate techies. We
+              are a space for tech enthusiasts to connect, share knowledge, and
+              grow together.
             </p>
 
             <Link
@@ -106,5 +116,5 @@ export default function Home() {
         </section>
       </motion.section>
     </motion.section>
-  )
+  );
 }

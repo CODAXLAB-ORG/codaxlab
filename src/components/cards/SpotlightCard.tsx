@@ -1,9 +1,11 @@
-import React, { useState, useRef, useEffect, PropsWithChildren } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useRef, useEffect, PropsWithChildren } from "react";
+import { motion } from "framer-motion";
 
 interface SpotlightCardProps {}
 
-export const SpotlightCard: React.FC<PropsWithChildren<SpotlightCardProps>> = ({ children }) => {
+export const SpotlightCard: React.FC<PropsWithChildren<SpotlightCardProps>> = ({
+  children,
+}) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -14,17 +16,17 @@ export const SpotlightCard: React.FC<PropsWithChildren<SpotlightCardProps>> = ({
       setMousePosition({ x: ev.clientX - rect.left, y: ev.clientY - rect.top });
     };
 
-    cardRef.current?.addEventListener('mousemove', updateMousePosition);
+    cardRef.current?.addEventListener("mousemove", updateMousePosition);
 
     return () => {
-      cardRef.current?.removeEventListener('mousemove', updateMousePosition);
+      cardRef.current?.removeEventListener("mousemove", updateMousePosition);
     };
   }, []);
 
   return (
     <div
       ref={cardRef}
-      className="relative max-h-96 w-full max-w-82 rounded-xl bg-gradient-to-tr from-gray-800 to-black p-8 overflow-hidden shadow-lg"
+      className="relative h-40 w-full max-w-82 rounded-xl bg-gradient-to-tr from-gray-800 to-black p-8 overflow-hidden shadow-lg"
     >
       <motion.div
         className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 "

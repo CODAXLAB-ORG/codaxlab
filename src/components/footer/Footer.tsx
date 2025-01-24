@@ -1,4 +1,3 @@
-
 import { BsWhatsapp } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa";
 import { RiTwitterXLine } from "react-icons/ri";
@@ -6,12 +5,13 @@ import { Link } from "react-router-dom";
 import CODAXLABLOGO from "../../assets/CODAXLABLOGO.png";
 import { AiFillTikTok } from "react-icons/ai";
 import { useModal } from "../../hooks/useModal";
-import { Modal } from './../modals/Modal';
+import { Modal } from "./../modals/Modal";
 import PrivacyPolicy from "../Policy/PrivacyPolicy";
 import FAQs from "../Policy/FAQs";
 
 export default function Footer() {
-  const { isOpen, openModal, closeModal, isOpen2, openModal2, closeModal2 } = useModal()
+  const { isOpen, openModal, closeModal, isOpen2, openModal2, closeModal2 } =
+    useModal();
   const currentYear: number = new Date().getFullYear();
 
   return (
@@ -57,11 +57,7 @@ export default function Footer() {
                 <b className="text-white uppercase">More Links</b>
                 <ul className="flex flex-col gap-y-3 items-start py-4 justify-start w-full text-gray-300">
                   <li>
-                    <button onClick={openModal}>
-                      Privacy Policy
-                    </button>
-
-                    
+                    <button onClick={openModal}>Privacy Policy</button>
                   </li>
                   <li className="hover:text-white transition-all duration-300">
                     <button onClick={openModal2}>FAQs</button>
@@ -103,22 +99,16 @@ export default function Footer() {
         </div>
       </div>
 
-      <Modal
-        isOpen={isOpen}
-        onClose={closeModal}
-        title="Privacy Policy"
-
-      >
-        <PrivacyPolicy/>
+      <Modal isOpen={isOpen} onClose={closeModal} title="Privacy Policy">
+        <PrivacyPolicy />
       </Modal>
 
       <Modal
         isOpen={isOpen2}
         onClose={closeModal2}
         title="Frequently Asked Questions"
-
       >
-        <FAQs/>
+        <FAQs />
       </Modal>
     </footer>
   );
