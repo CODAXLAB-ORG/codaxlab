@@ -130,9 +130,9 @@ function GallerItem(props: content) {
       ? contentAnimation?.previous.data?.title
       : contentAnimation?.current.data?.title;
     const dateLabel = animateProcess?.removing
-    ? contentAnimation?.previous.data?.date.label
-    : contentAnimation?.current.data?.date.label;
-    const date = dateCurr
+      ? contentAnimation?.previous.data?.date.label
+      : contentAnimation?.current.data?.date.label;
+    const date = dateCurr;
 
     const text = animateProcess?.removing
       ? contentAnimation?.previous.data?.description
@@ -142,10 +142,10 @@ function GallerItem(props: content) {
       ? contentAnimation?.previous.data?.referenceLink
       : contentAnimation?.current.data?.referenceLink;
 
-    const data = `CodaxLab event\n${dateLabel}: ${date}\n\n${text}\n\n\n`
+    const data = `CodaxLab event\n${dateLabel}: ${date}\n\n${text}\n\n\n`;
     shareContent({
       title,
-      text:data,
+      text: data,
       url,
     });
   }, [animateProcess?.removing, contentAnimation, dateCurr]);
@@ -236,7 +236,7 @@ function GallerItem(props: content) {
                   </strong>
                   <q
                     style={textAnimation}
-                    className="duration-200 delay-[1000ms] text-gray-500 italic text-start"
+                    className="duration-200 delay-[1000ms] text-gray-500 text-[14px] italic text-start"
                   >
                     {animateProcess?.removing
                       ? contentAnimation?.previous.data?.review
