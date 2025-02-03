@@ -63,7 +63,7 @@ export default function HomeGallerySection(): JSX.Element {
         animate={controls}
         variants={fadeInUp}
       >
-        Our Recent Events
+        Events We've Attended
       </motion.h1>
       <motion.p
         className="text-md md:text-xl lg:text-lg max-w-2xl bg-clip-text text-gray-300 text-center pb-2"
@@ -71,8 +71,8 @@ export default function HomeGallerySection(): JSX.Element {
         animate={controls}
         variants={fadeInUp}
       >
-        Explore the highlights of our recent events, featuring innovation,
-        teamwork, and networking opportunities.
+        Take a look at some of the events our community has attended, where we
+        learned, connected, and grew together.
       </motion.p>
 
       {/* Top Row */}
