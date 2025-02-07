@@ -14,21 +14,21 @@ const KindModal = ({ show, setShow }: ModalProps) => {
           className="m-10 max-w-[500px] p-6 flex h-fit w-full flex-col items-center rounded-[10px] text-black bg-white gap-3"
         >
           <h1 className="text-2xl text-center font-semibold">Donate in Kind</h1>
-          <p className="text-sm text-center">
+          <p className="text-sm text-center leading-6">
             We gladly accept donations in kind! If you'd like to donate laptops,
             books, or other tech gear to support our community members, please
             contact us at{" "}
             <a
-              href="mailto: enquiries@codaxlab.com"
+              href="mailto:enquires@codaxlab.com"
               className="text-blue-500 hover:underline transition-all duration-300"
             >
-              enquiries@codaxlab.com.
+              enquires@codaxlab.com
             </a>{" "}
             Your generosity is deeply appreciated—thank you in advance for
             making a difference!
           </p>
           <button className="bg-[#222] text-white px-3 py-1 rounded-md">
-            <a href="mailto: enquiries@codaxlab.com">Contact Us</a>
+            <a href="mailto:enquires@codaxlab.com">Contact Us</a>
           </button>
 
           <button onClick={() => setShow(!show)} className="underline">

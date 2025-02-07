@@ -98,7 +98,7 @@ const Navbar: React.FC = () => {
             ))}
             <button>
               <a
-                href="mailto:enquiries@codaxlab.com "
+                href="https://chat.whatsapp.com/HkNUR3Qvs6KIPpBStJKNeQ"
                 className="relative inline-flex items-center justify-center p-2 px-5 py-3 overflow-hidden font-medium text-indigo-600 rounded-lg shadow-2xl group"
               >
                 <span className="absolute top-0 left-0 w-40 h-40 -mt-10 -ml-3 transition-all duration-700 bg-white rounded-full blur-md ease"></span>
@@ -171,7 +171,7 @@ const Navbar: React.FC = () => {
 
           <button className="flex items-center justify-start w-full h-full max-h-[5rem] border-r-2 border-gray-700 pr-4">
             <a
-              href="mailto:enquiries@codaxlab.com"
+              href="https://chat.whatsapp.com/HkNUR3Qvs6KIPpBStJKNeQ"
               className="relative inline-flex items-center justify-center p-4 px-5 py-3 overflow-hidden font-medium rounded-lg shadow-2xl group w-full"
             >
               <span className="absolute top-0 left-0 w-40 h-40 -mt-10 -ml-3 transition-all duration-700 bg-white rounded-full blur-md ease"></span>

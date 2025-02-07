@@ -36,13 +36,14 @@ const HeroSection: React.FC = () => {
         </h1>
         {/* Subheading */}
         <p className="text-lg md:text-3xl lg:text-2xl max-w-xl bg-clip-text text-transparent bg-gradient-to-r from-gray-500 to-white text-center lg:text-start">
-          A community for tech enthusiasts to connect, share knowledge, and grow together.
+          A community for tech enthusiasts to connect, share knowledge, and grow
+          together.
         </p>
         {/* Join Community Button */}
         <div className="max-w-[20rem] p-1 py-3 md:py-4 xl:py-3 border-2 border-gray-500 rounded-lg shadow-lg transition-all duration-[5s] hover:shadow-2xl hover:border-gray-700">
           <Link
-            to="mailto:enquiries@codaxlab.com"
-            className="text-xl md:text-3xl w-full lg:text-2xl px-5 font-semibold py-2 md:py-3 xl:py-2 bg-gradient-to-r from-gray-500 to-white hover:from-white hover:to-gray-500 text-black rounded-lg shadow-lg transition-all duration-700 ease-in-out"
+            to="https://chat.whatsapp.com/HkNUR3Qvs6KIPpBStJKNeQ"
+            className="text-xl md:text-3xl w-full lg:text-xl px-5 font-semibold py-2 md:py-3 xl:py-2 bg-gradient-to-r from-gray-500 to-white hover:from-white hover:to-gray-500 text-black rounded-lg shadow-lg transition-all duration-700 ease-in-out"
           >
             Join Community
           </Link>
