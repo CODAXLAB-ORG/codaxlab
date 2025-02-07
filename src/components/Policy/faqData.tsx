@@ -6,26 +6,6 @@ export const faqData: FAQ[] = [
     answer:
       "CODAXLAB is a welcoming community for tech enthusiasts to connect, share knowledge, and grow together. Whether you're a beginner or an expert, there's something for everyone!",
   },
-  // {
-  //   question: "What information does CODAXLAB collect?",
-  //   answer:
-  //     "We may collect personal information like your name, email address and location during registration, technical data such as your skills (tech stacks you use), and any content or feedback you share on our platform.",
-  // },
-  // {
-  //   question: "How does CODAXLAB use my information?",
-  //   answer:
-  //     "We use your information to enhance your experience, provide personalized recommendations, ensure security, and improve the functionality of our services.",
-  // },
-  // {
-  //   question: "Does CODAXLAB share my information?",
-  //   answer:
-  //     "We do not sell your personal information. We only share it with trusted partners to comply with legal obligations, protect the community's safety, or provide essential services.",
-  // },
-  // {
-  //   question: "How can I manage my data?",
-  //   answer:
-  //     "You can update or delete your account information and adjust your preferences at any time through your account settings.",
-  // },
   {
     question: "How can I contact CODAXLAB?",
     answer:
@@ -44,6 +24,6 @@ export const faqData: FAQ[] = [
   {
     question: "Are there community guidelines for CODAXLAB?",
     answer:
-      "Yes, all members are expected to adhere to our community guidelines to ensure a respectful and collaborative environment. Violations may result in account suspension or termination.",
+      "Yes! All members are expected to follow our community guidelines to maintain a respectful and collaborative environment. Violations may result in account suspension or termination. Here are the key guidelines:  🔥 Be respectful and courteous to others.  🔥 No spamming or self-promotion.  🔥 Stay on topic and avoid irrelevant discussions.  🔥 Do not share illegal or inappropriate content.  🔥 Help and support each other in learning and improving skills.  Let's make this group a positive and productive community!",
   },
 ];

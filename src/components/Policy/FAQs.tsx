@@ -18,19 +18,30 @@ const FAQs: React.FC = () => {
             className="border border-gray-300 rounded-lg overflow-hidden"
           >
             <button
-              className="w-full flex items-center justify-between gap-4 text-left p-2 bg-gray-100 hover:bg-gray-200 focus:outline-none"
+              className="w-full flex items-center justify-between gap-4 text-left p-4 bg-gray-100 hover:bg-gray-200 focus:outline-none"
               onClick={() => toggleFAQ(index)}
             >
               <h2 className="text-md font-medium max-w-[17rem]">
                 {faq.question}
               </h2>
-              <Plus size={24} className="min-w-7 text-lg" />
+              <Plus
+                size={24}
+                className={`min-w-7 transition-transform duration-300 ${
+                  activeIndex === index ? "rotate-45" : ""
+                }`}
+              />
             </button>
-            {activeIndex === index && (
+            <div
+              className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                activeIndex === index
+                  ? "max-h-40 opacity-100"
+                  : "max-h-0 opacity-0"
+              }`}
+            >
               <div className="p-4 bg-gray-300 text-black">
                 <p>{faq.answer}</p>
               </div>
-            )}
+            </div>
           </div>
         ))}
       </div>

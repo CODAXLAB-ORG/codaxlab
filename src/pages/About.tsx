@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { faqData } from "../components/Policy/faqData";
 
 export default function About() {
   return (
@@ -22,8 +23,7 @@ export default function About() {
       >
         <h1 className="text-5xl font-bold">About Us at CodaxLab</h1>
         <p className="text-lg text-[#eee] mt-4 max-w-2xl">
-          Empowering innovation and driving excellence in a rapidly evolving
-          digital world.
+          A vibrant tech community where innovation meets collaboration.
         </p>
       </motion.div>
 
@@ -41,19 +41,19 @@ export default function About() {
 
           {/* Right Text */}
           <div className="text-left">
-            <h2 className="text-4xl font-bold text-white mb-4">
-              We Always Make The Best
-            </h2>
+            <h2 className="text-4xl font-bold text-white mb-4">Who We Are </h2>
             <p className="text-lg text-[#eee] mb-6">
               At <span className="font-semibold text-white">CodaxLab</span>, we
-              specialize in crafting innovative and high-performance software
-              solutions. With a dedication to excellence and a focus on
-              innovation, we ensure that every project meets the highest
-              standards.
+              we are a growing community of tech enthusiasts, innovators, and
+              learners committed to driving excellence in technology. Our goal
+              is to create an inclusive space for sharing knowledge, building
+              projects, and growing together.
             </p>
-            <button className="px-6 py-3 bg-gray-700 text-white font-semibold rounded-lg shadow-md hover:bg-gray-800 transition">
-              Contact Us
-            </button>
+            <a href="https://chat.whatsapp.com/HkNUR3Qvs6KIPpBStJKNeQ">
+              <button className="px-6 py-3 bg-gray-700 text-white font-semibold rounded-lg shadow-md hover:bg-gray-800 transition">
+                Join Our Community
+              </button>
+            </a>
           </div>
         </div>
       </div>
@@ -61,80 +61,63 @@ export default function About() {
       {/* Core Values Section */}
       <div className="container mx-auto px-2 py-16">
         <h2 className="text-4xl font-bold text-center text-white mb-12">
-          What Drives Us
+          Our Community Pillars{" "}
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Vision Section */}
           <div className="bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center">
             <h3 className="text-2xl font-bold text-white mb-4">Our Vision</h3>
             <p className="text-gray-400">
-              To shape the future of technology by fostering innovation and
-              building solutions that make a lasting impact globally.
-            </p>
-          </div>
-
-          {/* Mission Section */}
-          <div className="bg-gray-900 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center border-t-4 border-indigo-500">
-            <h3 className="text-2xl font-bold text-white mb-4">Our Mission</h3>
-            <p className="text-gray-400">
-              To empower businesses by delivering high-performance software
-              solutions that solve real-world challenges with creativity and
-              excellence.
+              To build a thriving tech community that fosters creativity,
+              learning, and collaboration while shaping the future of
+              technology.
             </p>
           </div>
 
           {/* Core Values Section */}
-          <div className="bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center">
+          <div className="bg-gray-900 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center border-t-4 border-indigo-500">
             <h3 className="text-2xl font-bold text-white mb-4">
               Our Core Values
             </h3>
             <ul className="space-y-4 text-left">
               <li className="text-gray-400">
-                <strong className="text-indigo-500">Innovation:</strong>{" "}
-                Pioneering new ideas and technologies.
-              </li>
-              <li className="text-gray-400">
-                <strong className="text-indigo-500">Integrity:</strong> Building
-                trust through honesty and transparency.
-              </li>
-              <li className="text-gray-400">
-                <strong className="text-indigo-500">Sustainability:</strong>{" "}
-                Fostering environmentally conscious solutions.
-              </li>
-              <li className="text-gray-400">
                 <strong className="text-indigo-500">Collaboration:</strong>{" "}
-                Empowering teamwork to achieve greatness.
+                Building together to achieve greater impact.
+              </li>
+              <li className="text-gray-400">
+                <strong className="text-indigo-500">Growth:</strong> Empowering
+                continuous learning and skill development.
+              </li>
+              <li className="text-gray-400">
+                <strong className="text-indigo-500">Diversity:</strong>{" "}
+                Celebrating diverse perspectives and backgrounds.
+              </li>
+              <li className="text-gray-400">
+                <strong className="text-indigo-500">Innovation:</strong>{" "}
+                Encouraging bold ideas and creative solutions.
               </li>
             </ul>
+          </div>
+          {/* Mission Section */}
+          <div className="bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center">
+            <h3 className="text-2xl font-bold text-white mb-4">Our Mission</h3>
+            <p className="text-gray-400">
+              To empower individuals by connecting them to resources,
+              mentorship, and opportunities that help them grow and succeed in
+              tech.
+            </p>
           </div>
         </div>
       </div>
 
       {/* FAQs Section */}
       <div className="container mx-auto px-2 py-16">
-        {/* FAQ List */}
         <div>
           <h2 className="text-4xl font-bold text-white mb-8">
             Frequently Asked Questions
           </h2>
           <div className="space-y-4">
-            {[
-              {
-                question: "What services do you provide?",
-                answer:
-                  "We offer custom software solutions, consulting, and design.",
-              },
-              {
-                question: "How can I collaborate with CodaxLab?",
-                answer:
-                  "Reach out to us via the contact page or explore our careers.",
-              },
-              {
-                question: "What industries do you work with?",
-                answer:
-                  "We cater to a wide range of industries, including tech, healthcare, and finance.",
-              },
-            ].map((faq, index) => (
+            {faqData.map((faq, index) => (
               <details
                 key={index}
                 className="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 group"
@@ -163,9 +146,9 @@ export default function About() {
             ))}
           </div>
         </div>
-
-        {/* Ant Design Illustration and Contact Form */}
-        {/* <div className="bg-gray-800 p-8 rounded-lg shadow-lg text-center">
+      </div>
+      {/* Ant Design Illustration and Contact Form */}
+      {/* <div className="bg-gray-800 p-8 rounded-lg shadow-lg text-center">
 					<h3 className="text-2xl font-bold text-white mb-4">Any Questions?</h3>
 					<p className="text-gray-400 mb-6">
 						You can ask anything you want to know about CodaxLab.
@@ -190,10 +173,9 @@ export default function About() {
 						/>
 					</div>
 				</div> */}
-      </div>
 
       {/* Call-to-Action Section */}
-      <motion.div
+      {/* <motion.div
         className="relative w-full h-80 bg-cover bg-center flex flex-col items-center justify-center text-center"
         style={{
           backgroundImage:
@@ -216,7 +198,7 @@ export default function About() {
         <button className="mt-6 px-8 py-3 bg-gray-700 text-white font-semibold rounded-lg shadow-md hover:bg-gray-800 transition">
           Explore Careers
         </button>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 }
