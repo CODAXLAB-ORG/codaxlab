@@ -49,7 +49,9 @@ export default function Footer() {
                     <Link to="about">About Us</Link>
                   </li>
                   <li className="hover:text-white transition-all duration-300">
-                    <a href="mailto:enquiries@codaxlab.com">Join us!</a>
+                    <a href="https://chat.whatsapp.com/HkNUR3Qvs6KIPpBStJKNeQ">
+                      Join us!
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -76,9 +78,9 @@ export default function Footer() {
           </p>
           <ul className="Socials max-w-[8rem]  grid grid-cols-4 gap-x-2 lg:gap-x-6 md:text-2xl">
             <li className="hover:text-green-500 transition-all duration-300">
-              <Link to="#">
+              <a href="https://chat.whatsapp.com/HkNUR3Qvs6KIPpBStJKNeQ">
                 <BsWhatsapp />
-              </Link>
+              </a>
             </li>
             <li className="hover:text-black transition-all duration-300">
               <Link to="#">
@@ -91,9 +93,9 @@ export default function Footer() {
               </Link>
             </li>
             <li className="hover:text-blue-500 transition-all duration-300">
-              <Link to="#">
+              <a href="https://www.linkedin.com/in/codaxlab-hub-ba8272342/">
                 <FaLinkedinIn />
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
